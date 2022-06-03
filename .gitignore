@@ -1,0 +1,9 @@
+.idea
+__pycache__
+imgdate
+scripts/test.py
+scripts/test2.py
+scripts/MarkRecord.txt
+scripts/__pycache__
+videodata
+Output/

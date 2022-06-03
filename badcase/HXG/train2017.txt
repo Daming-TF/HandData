@@ -1,0 +1,2 @@
+.\HXG\HXG\images\train2017\000000500036.jpg
+.\HXG\HXG\images\train2017\000000500122.jpg

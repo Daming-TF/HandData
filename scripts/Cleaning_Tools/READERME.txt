@@ -1,0 +1,13 @@
+这个文件夹主要负责自动清洗数据集，以及人工清洗的辅助工具
+1. online_recorddistance.py：
+	这个主要是在线调用图片输入到我们的网络输出带有landmarks信息的图片
+
+2. auto_recoddistance(21p).py：
+	
+	通过递归操作，生成与数据集相同的文件结构，并离线自动完成清洗工作
+
+3.auto_recoddistance(hdf5).py：
+	由于读写图片设计太多的I/O操作，当数据量大的时候会严重影响的运行速度，所以改为通过hdf5文件格式来作为存储和读写的载体
+
+4. find_fakewrong.py：
+	针对auto_recoddistance自动清洗后的照片进一步人工筛选

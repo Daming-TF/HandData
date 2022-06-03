@@ -1,0 +1,6 @@
+这里主要是各种开源数据集的接口：
+一般会有两个程序：
+1. vis_hand.py:
+	通过该程序可以把该开源数据存储keypoints的文件格式转化成coco格式，并输出带有landmarks信息的图片
+2. conver_coco_format.py:
+	利用vis_hand中使用的方法，把原始数据按照设定的数量划分train2017，val2017, test2017三个数据集，并生成所对应的coco JSON文件

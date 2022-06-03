@@ -1,0 +1,27 @@
+这个文件程序主要是实现与手部特征点热门API产品的对比
+
+一.文件夹说明
+每个产品对应一个文件夹，如baidu，Mediapipe
+每个文件中至少存在一个程序：
+1.  以文件命名的py文件：主要实现通过api处理我们静态图片数据集，并保存成coco_json格式
+
+二.py文件说明
+1. check_comparision.py: 
+	分别调出我们模型输出与特定某个产品输出，并并排展示（左边为我们的模型，右边为产品）
+	其次通过按键可以查看下一帧（‘f’）或上一帧（‘b’），当发现不合格也可以按下‘m’记录在对应产品图片输出目录
+
+2. cocoeval_json_format_conversion.py:
+	实现把coco_json格式转成能够输入COCOeval做AP分析的json格式
+
+3. data_eval.py:
+	把gt_json 以及 模型输出json（我们/产品）即可计算出MAP, AP(.75), AP(.5), AP(M), AP(L), MAR, AR(.75), AR(.5), AR(M), AR(L)
+
+4. make_comparison.py：
+	分别调出我们模型输出与特定某个产品输出，连续图像帧输出，并保存对比视频
+
+5. Video_Frame_Extraction:
+	主要是实现视频取帧，为的是构造一个可分析的测试集，方便后面通过api得到我们需要的数据
+
+6. json_img.py:
+    主要通过我们的coco格式（API程序转化生成的）打印出来并保存，方便comparision对比
+
