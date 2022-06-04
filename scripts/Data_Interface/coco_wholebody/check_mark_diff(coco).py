@@ -2,9 +2,10 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
-from json_tools import crop_box
+
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
 
 data_path = r'F:\image\coco'
 newjson_dir = r'E:\数据标记反馈\3月4日交付\6137-2月28日打回.json'
@@ -51,7 +52,6 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
             crop_img, crop_landmarks = crop_box(image, hand.copy(), box_factor=1.5)
             newimage = draw_2d_points(crop_landmarks, copy.deepcopy(crop_img))
         # newimage = draw_2d_points(hand2, newimage)
-
 
         # cv2.imshow('show', newimage)
         # cv2.waitKey(0)

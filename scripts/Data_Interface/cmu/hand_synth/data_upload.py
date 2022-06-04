@@ -95,9 +95,6 @@ def main():
             img_dir = json_data['images'][0]['file_name']
             img_paths.append(img_dir)
 
-
-
-
     assert len(img_paths) == len(json_paths), print("Number of images and number of json-files are different!")
 
     for img_path, json_path in zip(img_paths, json_paths):

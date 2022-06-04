@@ -1,10 +1,6 @@
 import argparse
-import os
 import sys
-
 import numpy as np
-from json_tools import _init_save_folder
-import json
 import cv2
 import copy
 from tqdm import tqdm
@@ -15,7 +11,8 @@ import os
 DIR = os.path.split(os.path.realpath(__file__))[0]
 DIR = os.path.split(DIR)[0]
 sys.path.append(DIR)
-from ho3d.vis_hand import canonical_coordinates, load_pickle_data, projectPoints, get_intrinsics
+from .vis_hand import canonical_coordinates, load_pickle_data, projectPoints, get_intrinsics
+from library.json_tools import _init_save_folder
 from convert_tools import convert_coco_format_from_wholebody
 
 COCOBBOX_FACTOR = 1.5
@@ -113,8 +110,6 @@ def main(save_dir, data_dir, coco_start_id):
     with open(os.path.join(save_dir, 'annotations', f'person_keypoints_train2017.json'), 'w') as fw:
         json.dump(json_trainfile, fw)
         print("person_keypoints_train2017.json have succeed to write")
-
-
 
 
 if __name__ == "__main__":

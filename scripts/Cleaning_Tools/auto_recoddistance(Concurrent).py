@@ -3,13 +3,6 @@
 # 根据设置的process_num，把每个文件数据列表均分成process_num份，实现并发加速
 # 并在Output每个数据包的train、val、test路径下生成record.txt文件，用于存储每个Distan > Threshold的图片名字以及，欧氏距离值res1
 
-## 注意：(有递归操作)
-## 输入数据集格式如："../imgdate"
-## json_show 增加了一个参数n，以选用返回坐标点模式
-
-from HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
-from Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
-from tools import mkdir, draw_2d_points, coords_to_box, jsonshow, draw_text, MAX_Divide_Min_Distance_calculation
 import cv2
 import time
 import argparse
@@ -21,10 +14,16 @@ from multiprocessing import Process, Queue, Pool, cpu_count
 from tqdm import tqdm
 import copy
 
+from library.HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
+from library.Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
+from library.tools import mkdir, draw_2d_points, coords_to_box, jsonshow, draw_text, MAX_Divide_Min_Distance_calculation
+
+
 json_list = list()
 def main():
     save_path = os.path.join(args.SavePath, os.path.basename(args.ImgDatePath))
     check(args.ImgDatePath, save_path)
+
 
 def check(path, save_path):
     # path 为当前搜索路径
@@ -88,7 +87,6 @@ def check(path, save_path):
         for i in range(process_num):
             process_list[i].start()
 
-
         # 当前位置阻塞主进程，带执行join()的进程结束后再继续执行主进程
         for i in range(process_num):
             process_list[i].join()
@@ -98,6 +96,7 @@ def check(path, save_path):
         #         # get函数中的参数True，表示最多阻塞 timeout 秒，如果在这段时间内项目不能得到，将引发 Empty 异常
         #         info = queue_info.get(True)
         #         f.write(info)
+
 
 def read_image(queue_info, image_block, save_path, handdet_modelpath, hand2d_modelpath, json_file):
     # 初始化设置
@@ -201,9 +200,6 @@ def read_image(queue_info, image_block, save_path, handdet_modelpath, hand2d_mod
             f.write(info_list[j])
 
 
-
-
-
 if __name__ == '__main__':
     # 创建一个解析器
     parser = argparse.ArgumentParser()
@@ -223,9 +219,10 @@ if __name__ == '__main__':
     parser.add_argument("--SavePath",
                         default=r"E:\L2_eval\new_data\output\index5-2-3",
                         help="this parameter is about the PATH of ImgSave", dest="SavePath", type=str)
-    '''parser.add_argument("--RecordPath",
-                        default=r"imgdate/Output",
-                        help="this parameter is about the PATH of ImgSave", dest="RecordPath", type=str)'''
+    # parser.add_argument("--RecordPath",
+    #                     default=r"imgdate/Output",
+    #                     help="this parameter is about the PATH of ImgSave", dest="RecordPath", type=str)
+
     # 解析参数
     args = parser.parse_args()
     print("parameter 'hand_det_path' is :", args.HandDetModelPATH)

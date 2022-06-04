@@ -5,8 +5,9 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
+
+from library.tools import draw_2d_points
 
 data_path = r'G:\test_data\hardcase_data\dataset'
 newjson_dir = r'E:\数据标记反馈\2月25日无效样本\5479-手势关键点-2022_1_25.json'
@@ -27,7 +28,6 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
         data_name = json_labels[i]['originalFileName'].split('_')[0]
 
         image_dir = os.path.join(data_path, data_name, 'images', image_name)
-
         image = cv2.imread(image_dir)
 
         # 画新数据的关键点
@@ -45,7 +45,6 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
 
         newimage = draw_2d_points(hand1, copy.deepcopy(image))
         newimage = draw_2d_points(hand2, newimage)
-
 
         # cv2.imshow('show', newimage)
         # cv2.waitKey(0)
@@ -68,13 +67,6 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
         canvas = np.hstack([newimage, image])
 
         cv2.imshow('la', canvas)
-
-        # # 检查旧数据是否修正
-        # if sampleID in [51443339, 51443345, 51440137, 51440215, 51440287, 51440289, 51440683, 51440741, 51440799, 51441061, 51442379, 51442727, 51443073, 51448839]:
-        #     print(f'sample ID:{sampleID}')
-        #     cv2.imshow('left-new', canvas)
-        #     cv2.waitKey(0)
-        # i = i+1
 
         while 1:
             key = cv2.waitKey(0) & 0xFF

@@ -4,13 +4,13 @@
 import argparse
 import copy
 import json
-from json_tools import _init_save_folder
-from convert_tools import convert_coco_format_from_crop
 from tqdm import tqdm
 import os
 import cv2
 import numpy as np
 
+from library.json_tools import _init_save_folder
+from convert_tools import convert_coco_format_from_crop
 
 
 COCOBBOX_FACTOR = 1.5
@@ -27,6 +27,7 @@ def set_parser():
     parser.add_argument("--JsonPath", default=r"E:\数据标记反馈\youtu3d\批次数据")
     args = parser.parse_args()
     return args
+
 
 def get_keypoints(label_feature):
     handlandmarks_list = []
@@ -47,18 +48,17 @@ def get_keypoints(label_feature):
     if not np.any(hand1[:, 2] == 0):
         handlandmarks_list.append(hand1)
     elif np.any(hand1[:, 2] == 0) and not np.all(hand1[:, 2] == 0):
-        count += 1
+        pass
 
     if not np.any(hand2[:, 2] == 0):
         handlandmarks_list.append(hand2)
     elif np.any(hand2[:, 2] == 0) and not np.all(hand2[:, 2] == 0):
-        count += 1
+        pass
 
     return handlandmarks_list
 
 
 def main():
-    count = 0
     En_flag = 0
     args = set_parser()
     save_path = args.SavePath
@@ -137,8 +137,7 @@ def main():
             # if flag == 1:
             #     coco_id += 1
 
-    print(f"statistics num is:{count}")
-
+    # print(f"statistics num is:{count}")
 
 
 if __name__ == "__main__":

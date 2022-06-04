@@ -1,12 +1,14 @@
 import cv2
 import os
 import numpy as np
-from tools import draw_2d_points
+
+from library.tools import draw_2d_points
 
 COCOBBOX_FACTOR = 1.5
 CROP_FACTOR = 2.2
 MIN_SIZE = 48
 DATA_CAPTURED = '2021-9-26 14:52:28'
+
 
 def refine_keypts(key_pts):
     coco_kps = np.zeros((key_pts.shape[0], 3), dtype=key_pts.dtype)

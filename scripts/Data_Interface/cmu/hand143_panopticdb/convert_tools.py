@@ -1,12 +1,12 @@
-
 import pickle
 import numpy as np
 import cv2
 import os
 import json
 from tqdm import tqdm
-from json_tools import _init_save_folder
-from tools import draw_2d_points
+
+from library.json_tools import _init_save_folder
+from library.tools import draw_2d_points
 
 NUM_JOINTS = 21
 

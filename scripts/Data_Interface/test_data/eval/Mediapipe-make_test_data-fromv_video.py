@@ -4,17 +4,17 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
-import sys
-sys.path.append("..")
-from convert_coco_format import convert_coco_format_from_wholebody
-
 from google.protobuf import json_format
 import numpy as np
 import json
-from json_tools import make_json_head
 import os
 from copy import deepcopy
-from tools import draw_2d_points
+
+import sys
+sys.path.append("..")
+from convert_coco_format import convert_coco_format_from_wholebody
+from library.json_tools import make_json_head
+from library.tools import draw_2d_points
 
 NUM_JOINTSNUM = 21
 

@@ -1,5 +1,6 @@
 import json
 
+
 def load_dataset(fp_data='./data/youtube_val.json'):
     """Load the YouTube dataset.
 
@@ -13,6 +14,7 @@ def load_dataset(fp_data='./data/youtube_val.json'):
         data = json.load(file)
 
     return data
+
 
 def retrieve_sample(data, ann_index):
     """Retrieve an annotation-image pair from the dataset.
@@ -30,6 +32,7 @@ def retrieve_sample(data, ann_index):
     
     img = images[img_idxs.index(ann['image_id'])]
     return ann, img
+
 
 def viz_sample(data, ann_index, faces=None, db_root='./data/'):
     """Visualize a sample from the dataset.

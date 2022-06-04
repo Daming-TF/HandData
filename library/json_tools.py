@@ -4,6 +4,7 @@ import cv2
 import json
 from collections import defaultdict
 
+
 def _init_save_folder(save_dir):
     # 创建数据集路径
     os.makedirs(os.path.join(save_dir, 'images', 'train2017'), exist_ok=True)
@@ -13,6 +14,7 @@ def _init_save_folder(save_dir):
     # 向json文件写入作者等相关信息
     json_file = make_json_head()
     return json_file
+
 
 def make_json_head():
     '''
@@ -63,7 +65,9 @@ def make_json_head():
     json_struct['annotations'] = list()
     return json_struct
 
+
 BOX_FACTOR = 2.2
+
 
 def crop_box(img, hand_pts_2d, box_factor=BOX_FACTOR):
     '''

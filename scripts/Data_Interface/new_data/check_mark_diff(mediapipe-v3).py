@@ -2,9 +2,10 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
-from json_tools import crop_box
+
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
 
 # data_path = r'E:\test_data\test_data_from_whole_body\test\imgs'
 newjson_dir = r'E:\test_data\test_data_from_whole_body\record\average_pseudo_labels_wo_badcase.json'

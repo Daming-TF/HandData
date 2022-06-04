@@ -5,8 +5,9 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
+
+from library.tools import draw_2d_points
 
 data_path = r'F:\image\Rendered Handpose Dataset Dataset\RHD\RHD_published_v2'
 newjson_dir = r'E:\数据标记反馈\3月4日交付\3月4日交付\6219-手势关键点-2022_2_17-10.json'
@@ -46,7 +47,6 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
 
         newimage = draw_2d_points(hand1, copy.deepcopy(image))
         newimage = draw_2d_points(hand2, newimage)
-
 
         # cv2.imshow('show', newimage)
         # cv2.waitKey(0)

@@ -1,15 +1,16 @@
 import json
-
 import cv2
 from tqdm import tqdm
-from json_tools import make_json_head
-from tools import draw_2d_points
 import numpy as np
 from copy import deepcopy
+
+from library.json_tools import make_json_head
+from library.tools import draw_2d_points
 
 mode = 'train'
 json_dir = fr'G:\imgdate2\HO3D_v3\HO3D_from_whole_body\annotations\person_keypoints_{mode}2017.json'
 save_dir = fr'G:\imgdate2\HO3D_v3\HO3D_from_whole_body\annotations\person_keypoints_{mode}2017_flip.json'
+
 
 def main():
     json_head = make_json_head()
@@ -43,14 +44,6 @@ def main():
 
     with open(save_dir, 'w')as f:
         json.dump(json_head, f)
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':

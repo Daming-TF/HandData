@@ -3,6 +3,7 @@ import os
 import copy
 from tqdm import tqdm
 
+
 def main(ignore_path, json_path, save_path):
     with open(ignore_path, "r") as f:  # 打开文件
         ignore_info_list = list()

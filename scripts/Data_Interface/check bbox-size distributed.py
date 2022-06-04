@@ -45,5 +45,3 @@ with open(json_dir, 'r')as f:
     the size ∈(256,∞) :{count_more_than256}
     
     ''')
-
-

@@ -8,7 +8,7 @@ from collections import defaultdict
 import numpy as np
 from tqdm import tqdm
 
-from json_tools import make_json_head, crop_box_wo_img
+from library.json_tools import make_json_head, crop_box_wo_img
 
 whole_json_path = r'G:\test_data\new_data\new_data_from_whole_body\annotations\test_w_hand_type.json'
 crop_json_path = r'G:\test_data\new_data\new_data_from_whole_body\match-v2_4-v2_5\v2_4_person_keypoints_test2017.json'

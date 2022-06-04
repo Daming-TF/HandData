@@ -4,12 +4,9 @@ import requests
 import numpy as np
 from argparse import ArgumentParser
 
-name = 'zhiwen'
 parser = ArgumentParser()
 parser.add_argument("--json_folder", default=fr"E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset\badcase\upload json", help="json folder that has corresponding json files")      # G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\anno
 opts = parser.parse_args()
-
-mode = f"{name}"
 
 
 def get_label_feature(json_path):

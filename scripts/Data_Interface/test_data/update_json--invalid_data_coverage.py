@@ -59,6 +59,7 @@ def get_keypoints(label_feature):
         handlandmarks_list.append(hand2)
     return handlandmarks_list
 
+
 def main():
     args = set_parser()
     tag_json_path = args.TagJsonPath        # 存放重标打回数据的路径
@@ -112,9 +113,6 @@ def main():
     with open(json_save_dir, 'w') as fw:
         json.dump(json_data, fw)
         print(f"{json_save_dir} have succeed to write")
-
-
-
 
 
 if __name__ == '__main__':

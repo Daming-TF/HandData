@@ -1,6 +1,6 @@
 import os
 import cv2
-from tqdm import  tqdm
+from tqdm import tqdm
 
 data_dir = r'G:\imgdate2\HO3D_v3\HO3D_from_whole_body\images\val2017'
 

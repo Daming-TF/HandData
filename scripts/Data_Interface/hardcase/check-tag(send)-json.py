@@ -2,7 +2,7 @@ import json
 import os
 import numpy as np
 import cv2
-from tools import draw_2d_points
+from library.tools import draw_2d_points
 
 json_path = r'G:\test_data\hardcase_data\dataset\aiyu\anno'
 data_path = r'G:\test_data\hardcase_data\dataset\aiyu\images'

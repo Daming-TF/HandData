@@ -25,11 +25,10 @@ import numpy as np
 import json
 import copy
 from collections import defaultdict
-import time
 
-from json_tools import _init_save_folder
-from dataset_v2_6 import convert_coco_format_from_wholebody
-from tools import draw_2d_points
+from library.json_tools import _init_save_folder
+from library.dataset_v2_6 import convert_coco_format_from_wholebody
+from library.tools import draw_2d_points
 
 COCOBBOX_FACTOR = 1.5
 COCO_START_ID = 1_200_000

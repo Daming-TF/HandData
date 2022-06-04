@@ -5,8 +5,9 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
+
+from library.tools import draw_2d_points
 
 data_path = r'E:\Data\landmarks\YouTube3D\images'
 newjson_dir = r'E:\数据标记反馈\youtu3d\批次数据\5053-手势关键点-2022_1_14.json'

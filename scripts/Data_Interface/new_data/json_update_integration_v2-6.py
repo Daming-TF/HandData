@@ -1,7 +1,8 @@
 import os.path
 from copy import deepcopy
 
-from json_tools import load_json_data, write_json
+from library.json_tools import load_json_data, write_json
+
 
 def main(ignore_path, json_path, save_path):
     with open(ignore_path, "r") as f:  # 打开文件
@@ -24,7 +25,6 @@ def main(ignore_path, json_path, save_path):
             annotations_dict.pop(image_id)
 
     write_json(images_dict, annotations_dict, save_path)
-
 
 
 if __name__ == "__main__":

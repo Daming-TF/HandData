@@ -1,17 +1,13 @@
-import copy
 import json
 import os
-import shutil
-import numpy as np
-from tqdm import tqdm
 import cv2
-from json_tools import crop_box
-from tools import draw_2d_points
 from multiprocessing import Process
-import _thread
+
 import sys
 sys.path.append("..")
-from weed_out_tool import ImageCrop
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
+from library.weed_out_tool import ImageCrop
 
 
 badcase_txt = r'E:\Data\landmarks\HFB\total_badcase_train.txt'
@@ -23,6 +19,7 @@ json_path = r'E:\Data\landmarks\HFB\test\sort_halpe_train_v1.json'
 # crop_json_path = r'E:\Data\landmarks\HFB\HFB\annotations\person_keypoints_train2017.json'
 save_path = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset\badcase'
 # suspect_record_path = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset\suspect_image'
+
 
 def check(landmarks, crop_landmarks, img):
     coco_kps = landmarks.copy()

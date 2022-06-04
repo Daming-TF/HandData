@@ -2,9 +2,10 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
-from json_tools import crop_box
+
+from library.tools import draw_2d_points
+from library.json_tools import crop_box
 
 # data_path = r'E:\test_data\test_data_from_whole_body\test\imgs'
 newjson_dir = r'E:\left_hand_label_data\annotations\youtu3d_update\person_keypoints_val2017.json'

@@ -19,6 +19,7 @@ def json_load(p):
         d = json.load(fi)
     return d
 
+
 def projectPoints(xyz, K):
     """ Project 3D coordinates into image space. """
     xyz = np.array(xyz)

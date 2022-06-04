@@ -12,6 +12,7 @@ import cv2
 COCO_START_ID = 1_300_000
 mode = 'train2017'
 
+
 def get_pic_num(data_path):
     count = 0
     file_names = os.listdir(data_path)
@@ -25,8 +26,6 @@ def get_pic_num(data_path):
     return count
 
 
-
-
 def get_file_list(file_path):
     dir_list = os.listdir(file_path)
     if not dir_list:
@@ -38,6 +37,7 @@ def get_file_list(file_path):
         dir_list = sorted(dir_list, key=lambda x: os.path.getmtime(os.path.join(file_path, x)))
         # print(dir_list)
         return dir_list
+
 
 def set_parser():
     parser = argparse.ArgumentParser()
@@ -55,6 +55,7 @@ def set_parser():
                         default=r"G:\imgdate2\HO3D_v3\HO3D_from_whole_body\images")
     args = parser.parse_args()
     return args
+
 
 def get_keypoints(label_feature):
     handlandmarks_list = []
@@ -76,6 +77,7 @@ def get_keypoints(label_feature):
         hand2[:, 2] = 2
         handlandmarks_list.append(hand2)
     return handlandmarks_list
+
 
 def main():
     args = set_parser()
@@ -152,9 +154,6 @@ def main():
     with open(json_save_dir, 'w') as fw:
         json.dump(json_data, fw)
         print("train2017.json have succeed to write")
-
-
-
 
 
 if __name__ == '__main__':

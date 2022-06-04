@@ -123,7 +123,7 @@ def main():
         else:
             print(f' [!] Upload {os.path.join(img_path)} failed, go to next sample...')
 
-        count+=1
+        count += 1
 
 
 if __name__ == "__main__":

@@ -1,7 +1,8 @@
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
+
+from library.tools import draw_2d_points
 
 DATA_CAPTURED = '2022-03-18 14:00:00'
 COCOBBOX_FACTOR = 1.5

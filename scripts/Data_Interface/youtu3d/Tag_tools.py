@@ -1,14 +1,17 @@
 import cv2
 import os
-from json_tools import crop_box
-from tools import  draw_2d_points
 import numpy as np
+
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
+
 
 COCOBBOX_FACTOR = 1.5
 CROP_FACTOR = 2.2
 MIN_SIZE = 48
 DATA_CAPTURED = '2021-9-26 14:52:28'
 NUM_HAND_KEYPOINTS = 21
+
 
 def convert_coco_format(img_dir, landmarks, json_file, mode, save_path, img_id, img_name = '0'):
     '''

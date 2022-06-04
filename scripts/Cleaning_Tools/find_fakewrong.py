@@ -7,15 +7,15 @@
       '''
 # 先将图片的路径信息保存在 Output/<数据包名>/<调用数据文件名>         例如：'../Output/YT3D/test2017.txt'
 # 存储图片信息
-## 同时将标记的图片保存在DatePath/record_date文件下                例如:'../Output/YT3D/YT3D/images/test2017/record_date'
-## 输入数据格式如:"../Output/YT3D/YT3D/images/test2017"         例如:'YT3D/YT3D/images/test2017/000000300002.jpg'
-## 需要修改图片信息记录文本的保存路径到/Output目录下的对应位置
+# 同时将标记的图片保存在DatePath/record_date文件下                例如:'../Output/YT3D/YT3D/images/test2017/record_date'
+# 输入数据格式如:"../Output/YT3D/YT3D/images/test2017"         例如:'YT3D/YT3D/images/test2017/000000300002.jpg'
+# 需要修改图片信息记录文本的保存路径到/Output目录下的对应位置
 
-## 相比find_fakewrong 2.0版本修改了成适配通用数据集（1.0版本需要输入图片以数字命名的）
-## 其次对应mark_info 存储在../Output/<DATA NAME>路径下
-## 输出对比变为：原图-gt输出-text输出
+# 相比find_fakewrong 2.0版本修改了成适配通用数据集（1.0版本需要输入图片以数字命名的）
+# 其次对应mark_info 存储在../Output/<DATA NAME>路径下
+# 输出对比变为：原图-gt输出-text输出
 
-from tools import mkdir
+from library.tools import mkdir
 import argparse
 import os
 import cv2
@@ -106,6 +106,7 @@ def main():
                 if i == len(img_list):
                     break
 
+
 if __name__ == "__main__":
     # 创建一个解析器
     parser = argparse.ArgumentParser()
@@ -129,4 +130,3 @@ if __name__ == "__main__":
     print("parameter 'OriginalPath' is :", args.OriginalPath)
     '''print("parameter 'MOutputPath' is :", args.MOutputPath)'''
     main()
-

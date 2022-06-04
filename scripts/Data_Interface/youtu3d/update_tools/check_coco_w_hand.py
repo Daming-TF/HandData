@@ -3,7 +3,8 @@ import json
 import os
 from collections import defaultdict
 import numpy as np
-from library.models.tools import draw_2d_points
+
+from library.tools import draw_2d_points
 
 
 def main():
@@ -43,6 +44,7 @@ def main():
         cv2.waitKey(1)
 
     print(del_list)
+
 
 def get_ids(data_dict):
     return list(data_dict.keys())

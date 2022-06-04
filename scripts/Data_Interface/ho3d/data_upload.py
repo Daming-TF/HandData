@@ -4,13 +4,11 @@ import requests
 import numpy as np
 from argparse import ArgumentParser
 
-name = 'zhiwen'
 parser = ArgumentParser()
-parser.add_argument("--img_folder", default=fr"G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\image", help="img folder that includes all imgs")
-parser.add_argument("--json_folder", default=fr"G:\Model_output\Output\HO3D_v3\badcase\upload json", help="json folder that has corresponding json files")      # G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\anno
+parser.add_argument("--json_folder",
+                    default=fr"G:\Model_output\Output\HO3D_v3\badcase\upload json",
+                    help="json folder that has corresponding json files")
 opts = parser.parse_args()
-
-mode = f"{name}"
 
 
 def get_label_feature(json_path):
@@ -94,9 +92,6 @@ def main():
             json_data = json.load(f)
             img_dir = json_data['images'][0]['file_name']
             img_paths.append(img_dir)
-
-
-
 
     assert len(img_paths) == len(json_paths), print("Number of images and number of json-files are different!")
 

@@ -4,8 +4,9 @@
 import json
 import numpy as np
 from tqdm import tqdm
-from json_tools import make_json_head
 from copy import deepcopy
+
+from library.json_tools import make_json_head
 from convert_tools import convert_coco_format_from_wholebody
 
 

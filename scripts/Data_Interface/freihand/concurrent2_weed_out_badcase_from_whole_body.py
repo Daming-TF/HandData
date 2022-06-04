@@ -1,17 +1,14 @@
-import copy
-import json
 import os
-import shutil
 import numpy as np
 from tqdm import tqdm
 import cv2
-from json_tools import crop_box
-from tools import draw_2d_points
 from multiprocessing import Process
-import _thread
+
 import sys
 sys.path.append("..")
-from weed_out_tool import ImageCrop
+from library.weed_out_tool import ImageCrop
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
 from fh_utils import db_size, load_db_annotation, read_img_cv, projectPoints
 
 
@@ -24,6 +21,7 @@ save_path = r'E:\Data\landmarks\FreiHAND_pub_v2\badcase'
 # suspect_record_path = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset\suspect_image'
 
 VERIONS = ['gs', 'hom', 'sample', 'auto']
+
 
 def check(landmarks, crop_landmarks, img):
     coco_kps = landmarks.copy()

@@ -3,7 +3,7 @@ import json
 import os
 from collections import defaultdict
 import numpy as np
-from library.models.tools import draw_2d_points
+from library.tools import draw_2d_points
 
 
 def main():
@@ -38,11 +38,11 @@ def main():
                                     cv2.FONT_HERSHEY_COMPLEX, 2, (0, 255, 0), 2)
             image = draw_2d_points(np.array(keypoints).reshape(21, 3), image)
 
-
         cv2.imshow("check", image)
         cv2.waitKey(1)
 
     print(del_list)
+
 
 def get_ids(data_dict):
     return list(data_dict.keys())

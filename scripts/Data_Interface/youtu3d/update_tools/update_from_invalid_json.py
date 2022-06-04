@@ -2,7 +2,7 @@ import json
 import os
 from tqdm import tqdm
 from .convert_tools import get_file_list
-from library.models.json_tools import get_ids, writer_v2_6
+from library.json_tools import get_ids, write_json
 
 data_path = r'E:\Data\landmarks\YouTube3D\images'
 
@@ -44,7 +44,7 @@ def update_from_invalid_json(images_dict, annotations_dict, invalid_sample_path,
             annotations_dict.pop(image_id)
             images_dict.pop(image_id)
 
-    writer_v2_6(images_dict, annotations_dict, json_save_path)
+    write_json(images_dict, annotations_dict, json_save_path)
 
 
 def record_match(image_id, index, save_path, counter):

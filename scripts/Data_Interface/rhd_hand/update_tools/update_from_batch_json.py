@@ -15,9 +15,9 @@ from tqdm import tqdm
 import numpy as np
 from collections import defaultdict
 
-from json_tools import get_ids, writer_v2_6
+from library.json_tools import get_ids, writer_v2_6
 from .convert_tools import get_file_list, get_keypoints
-from library.models.tools import bb_iou
+from library.tools import bb_iou
 
 data_path = r'F:\image\Rendered Handpose Dataset Dataset\RHD\RHD_published_v2'
 
@@ -162,10 +162,6 @@ def record_match(image_id, index, save_path, counter):
 #     for annotations_info in annotations_info_list:
 #         iou = bb_iou(crop_box(match_keypoints), crop_box(annotations_info['keypoints']))
 #         if iou > 0.5:
-#
-#
-#
-#
 #
 # def crop_box(keypoints, box_factor=1):
 #     coco_kps = keypoints.copy()

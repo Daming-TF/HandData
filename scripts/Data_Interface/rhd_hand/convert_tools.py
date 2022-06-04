@@ -1,11 +1,11 @@
-
 import pickle
 import numpy as np
 import cv2
 import os
 import json
 from tqdm import tqdm
-from json_tools import _init_save_folder
+
+from library.json_tools import _init_save_folder
 
 
 NUM_JOINTS = 21

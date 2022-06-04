@@ -2,8 +2,10 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
+
+from library.tools import draw_2d_points
+
 
 newjson_dir = r'E:\数据标记反馈\3月25日交付\7035-3月21日打回.json'
 
@@ -37,7 +39,6 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
 
         newimage = draw_2d_points(hand1, copy.deepcopy(image))
         newimage = draw_2d_points(hand2, newimage)
-
 
         # cv2.imshow('show', newimage)
         # cv2.waitKey(0)

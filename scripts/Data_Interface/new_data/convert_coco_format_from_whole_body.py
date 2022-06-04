@@ -1,18 +1,18 @@
 import argparse
 import os
 import numpy as np
-from json_tools import _init_save_folder
-from convert_tools import convert_coco_format_from_wholebody
 import json
-import cv2
-import copy
 from tqdm import tqdm
+
+from library.json_tools import _init_save_folder
+from convert_tools import convert_coco_format_from_wholebody
 
 COCOBBOX_FACTOR = 1.5
 COCO_START_ID = 1_400_000
 # VAL_NUM = 1_500
 
 # Divide_1 = COCO_START_ID + VAL_NUM
+
 
 def main(data_path, save_dir, json_dir, coco_start_id):
     # 创建文件结构并返回coco规范的dict结构

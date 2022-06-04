@@ -3,7 +3,7 @@ import cv2
 import torch
 from torchvision.ops import nms
 import onnxruntime
-import time 
+
 
 class HandDetModel(object):
     def __init__(self, model_path, topk=2, confth=0.3, nmsth=0.45):

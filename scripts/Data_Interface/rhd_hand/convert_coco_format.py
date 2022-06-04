@@ -1,14 +1,15 @@
 import argparse
 import os
 import numpy as np
-from json_tools import _init_save_folder, convert_coco_format
 import json
 import cv2
 import copy
 from tqdm import tqdm
 import pickle
+
 from vis_hand import coordinate_normalization
-from tools import mkdir
+from library.tools import mkdir
+from library.json_tools import _init_save_folder, convert_coco_format
 
 COCOBBOX_FACTOR = 1.5
 COCO_START_ID = 1_100_000

@@ -10,6 +10,7 @@ import numpy as np
 pro_dir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(pro_dir)
 
+
 # 读取json文件并返回gt图片以及6个关键点的数组
 def jsonshow(img_name, img_folder, json_path, n):
     with open(json_path, "r") as f:
@@ -51,6 +52,7 @@ def jsonshow(img_name, img_folder, json_path, n):
             elif n == 21:
                 return img_point, img_text, kp_points[:, 0:2]
 
+
 # 检查文件是否存在并生成
 def mkdir(path, name):
     folder = os.path.exists(path)
@@ -61,6 +63,7 @@ def mkdir(path, name):
         print( "--- make new file"+"<"+name+">"+" ---")
     else:
         return 0
+
 
 # 检查文件是否存在，若存在则加后缀递归生成
 def mkdir_avoid_overwrit(filename):
@@ -78,6 +81,7 @@ def mkdir_avoid_overwrit(filename):
 
 
 line_colour = [(0, 0, 255), (0, 255, 255), (0, 255, 0), (255, 255, 0), (255, 0, 0)]
+
 
 # 输出2d特征点
 def draw_2d_points(points, im_ori, finger_num = 21, line_thickness=2, circle_size=4):
@@ -167,6 +171,7 @@ def draw_2d_points(points, im_ori, finger_num = 21, line_thickness=2, circle_siz
 
     return im
 
+
 def draw_text(points, im_ori):
     '''
     打印出gt中landmarks中的标记数字
@@ -211,7 +216,6 @@ def draw_text(points, im_ori):
     return im
 
 
-
 # 返回box坐标
 def coords_to_box(coords, box_factor=1.0):
     '''
@@ -239,6 +243,7 @@ def coords_to_box(coords, box_factor=1.0):
     box = [(x_left, y_top), (x_right, y_bottom)]
     return box
 
+
 def L2Distance_calculation_YT3D(gt_kp_points, our_kp_points, image):
     '''
     计算21个关键点l2距离并返回
@@ -260,6 +265,7 @@ def L2Distance_calculation_YT3D(gt_kp_points, our_kp_points, image):
     dy = dy / sp[0]
     res = np.sum(np.hypot(dx, dy))
     return res
+
 
 # 对比上面，这里会只读取gt中不为0的数据，对每个
 def L2Distance_calculation_HFB(gt_kp_points, our_kp_points, image):

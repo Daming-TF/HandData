@@ -2,8 +2,10 @@
 gt数据里面，id是以image_id命名，所以该程序目的是重新命名id
 """
 import json
-from json_tools import make_json_head
 from tqdm import tqdm
+
+from library.json_tools import make_json_head
+
 
 json_dir = r'E:\test_data\test_data_from_whole_body\annotations\average_pseudo_labels_update-coco.json'
 save_dir = r'E:\test_data\test_data_from_whole_body\annotations\average_pseudo_labels_update-coco_id.json'
@@ -29,4 +31,3 @@ with open(json_dir, 'r')as f:
     with open(save_dir, 'w')as sf:
         json.dump(json_head, sf)
         print("success!")
-

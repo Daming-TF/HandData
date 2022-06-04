@@ -1,17 +1,14 @@
-import copy
 import json
 import os
-import shutil
 import numpy as np
-from tqdm import tqdm
 import cv2
-from json_tools import crop_box
-from tools import draw_2d_points
 from multiprocessing import Process
-import _thread
+
 import sys
 sys.path.append("..")
-from weed_out_tool import ImageCrop
+from library.weed_out_tool import ImageCrop
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
 
 
 badcase_txt = r'E:\Data\landmarks\handpose_x_gesture_v1\handpose_x_gesture_v1\total-badcase.txt'
@@ -146,8 +143,6 @@ def main():
             print("SUCCESSED!!")
             break
         i += parallel_process_num
-
-
 
 
 if __name__ == '__main__':

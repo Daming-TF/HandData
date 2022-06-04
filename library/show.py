@@ -9,7 +9,6 @@ pro_dir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(pro_dir)
 
 
-
 # FINGERTIP_IDXS_MANO = [744, 320, 443, 554, 671]
 # FINGERTIP_IDXS_MANO = [744, 320, 443, 671, 554]
 FINGERTIP_IDXS_MANO = [745, 333, 444, 672, 555]

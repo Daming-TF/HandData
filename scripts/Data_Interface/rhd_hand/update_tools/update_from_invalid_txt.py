@@ -40,3 +40,4 @@ def update_from_invalid_txt(json_data, ignore_dir, save_dir, debug=False):
         with open(save_dir, "w") as f:
             json.dump(json_data, f)
         print("加载入文件完成...")
+        

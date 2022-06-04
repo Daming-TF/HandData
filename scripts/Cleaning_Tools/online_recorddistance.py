@@ -13,11 +13,12 @@
 import cv2
 import numpy as np
 import time
-from HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
-from Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
-from tools import draw_2d_points, jsonshow
+from library.HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
+from library.Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
+from library.tools import draw_2d_points, jsonshow
 import argparse
 import os
+
 
 def main():
     hand_detector = HandDetModel(args.HandDetModelPATH)
@@ -128,6 +129,7 @@ def main():
                 img_serialnum = img_lastserial
         img_path = str(img_serialnum).zfill(12) + img_ext
 
+
 if __name__ == '__main__':
     # 创建一个解析器
     parser = argparse.ArgumentParser()
@@ -163,4 +165,3 @@ if __name__ == '__main__':
     filename = os.getcwd() + '\MarkRecord.txt'
     
     main()
-

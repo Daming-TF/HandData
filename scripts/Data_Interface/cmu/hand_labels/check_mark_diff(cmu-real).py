@@ -2,7 +2,7 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
+from library.tools import draw_2d_points
 import copy
 
 data_path = r'F:\image\CMU\hand_labels\hand_labels'
@@ -24,9 +24,7 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
         file_name = 'manual_'+image_info[2]
         image_name = originalFileName[originalFileName.find(f'{file_name}')+len(file_name)+1:]
 
-
         image_dir = os.path.join(data_path, file_name, image_name)
-
         image = cv2.imread(image_dir)
 
         # 画新数据的关键点
@@ -88,7 +86,7 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
                 text_path = os.path.join(os.path.split(newjson_dir)[0],
                                          os.path.splitext(os.path.split(newjson_dir)[1])[0])
                 # print('test!' + text_path)
-                img_examine_path = os.path.join('E:\Questionable data feedback\image', str(sampleID) + '.jpg')
+                img_examine_path = os.path.join(r'E:\Questionable data feedback\image', str(sampleID) + '.jpg')
                 if not os.path.exists(text_path):
                     os.mkdir(text_path)
                 badcase_path = os.path.join(text_path, 'badcase.txt')
@@ -98,8 +96,8 @@ with open(newjson_dir, 'r', encoding='UTF-8') as f:
                     print(img_examine_path)
                     print(image_name + f"({sampleID})")
 
-                    with open(badcase_path, 'a') as f:
-                        f.write(image_dir + f"\t({sampleID})\n")
+                    with open(badcase_path, 'a') as bf:
+                        bf.write(image_dir + f"\t({sampleID})\n")
 
                 else:
                     print(image_name + f"({sampleID})has beeen recored")

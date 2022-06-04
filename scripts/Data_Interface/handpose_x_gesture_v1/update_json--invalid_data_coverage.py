@@ -10,6 +10,7 @@ from convert_tools import convert_coco_format_from_wholebody
 
 mode = 'val'
 
+
 def get_pic_num(data_path):
     count = 0
     file_names = os.listdir(data_path)
@@ -21,8 +22,6 @@ def get_pic_num(data_path):
                 if img_name.endswith('.jpg'):
                     count += 1
     return count
-
-
 
 
 def get_file_list(file_path):
@@ -37,6 +36,7 @@ def get_file_list(file_path):
         # print(dir_list)
         return dir_list
 
+
 def set_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--TagJsonPath", help="无效数据的json文件路径",
@@ -49,6 +49,7 @@ def set_parser():
                         default=rf"F:\image\CMU\hand143_panopticdb\hand143_pannopticdb_from_whole_body\annotations\person_keypoints_{mode}2017-update-for-invaliddata.json")       # person_keypoints_{mode}-update.json
     args = parser.parse_args()
     return args
+
 
 def get_keypoints(label_feature):
     handlandmarks_list = []
@@ -70,6 +71,7 @@ def get_keypoints(label_feature):
         hand2[:, 2] = 2
         handlandmarks_list.append(hand2)
     return handlandmarks_list
+
 
 def main():
     args = set_parser()
@@ -130,9 +132,6 @@ def main():
     with open(json_save_dir, 'w') as fw:
         json.dump(json_data, fw)
         print(f"{json_save_dir} have succeed to write")
-
-
-
 
 
 if __name__ == '__main__':

@@ -1,21 +1,21 @@
 # 程序功能：
 # 通过输入存储数据集的路径，并根据每个数据包的文件结构，在Output中递归生成一样的文件结构存储结果
 # 并在Output每个数据包的train、val、test路径下生成record.txt文件，用于存储每个Distan > Threshold的图片名字以及，欧氏距离值res1
+# 数据加载的方式用hdf5格式
 
-## 注意：(有递归操作)
-## 输入数据集格式如："../imgdate"
-
-from HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
-from Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
-from tools import mkdir, draw_2d_points, coords_to_box, jsonshow, store_many_hdf5
+from library.HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
+from library.Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
+from library.tools import mkdir, draw_2d_points, coords_to_box, jsonshow, store_many_hdf5
 import cv2
 import time
 import argparse
 import os
 import numpy as np
 
+
 def main():
     check(args.ImgDatePath, args.SavePath)
+
 
 def check(path, save_path):
     # print(path)
@@ -49,7 +49,6 @@ def check(path, save_path):
                     test_image = cv2.imread(test_image_path)
                     test_image = cv2.resize(test_image, (400, 400), interpolation=cv2.INTER_LINEAR)
                     images.append(test_image)
-
 
             elif filename.endswith('.jpg'):
                 img_bgr = cv2.imread(os.path.join(path, filename))
@@ -117,14 +116,10 @@ def check(path, save_path):
                     test_image = cv2.resize(test_image, (400, 400), interpolation=cv2.INTER_LINEAR)
                     images.append(test_image)
 
-
-
     store_many_hdf5(images, save_path)
     with open((save_path + r'\\record.txt'), 'a') as f:
         for j in range(len(info_list)):
             f.write(info_list[j])
-            #print(filename)
-            #print("欧式距离为：" + str(res1) + '\n')
 
 
 if __name__ == '__main__':
@@ -144,9 +139,10 @@ if __name__ == '__main__':
     parser.add_argument("--SavePath",
                         default=r"D:../Output",
                         help="this parameter is about the PATH of ImgSave", dest="SavePath", type=str)
-    '''parser.add_argument("--RecordPath",
-                        default=r"imgdate/Output",
-                        help="this parameter is about the PATH of ImgSave", dest="RecordPath", type=str)'''
+    # parser.add_argument("--RecordPath",
+    #                     default=r"imgdate/Output",
+    #                     help="this parameter is about the PATH of ImgSave", dest="RecordPath", type=str)
+
     # 解析参数
     args = parser.parse_args()
     print("parameter 'hand_det_path' is :", args.HandDetModelPATH)
@@ -160,9 +156,6 @@ if __name__ == '__main__':
     # onnx:一种开放的模型文件标准格式，那么尝试把前面实现的多入多出三层神经网络保存为ONNX模型文件，以方便在不同的框架中都可以使用
     hand_2d_extractor = Hand2DModel(args.Hand2DModelPATH)
     # hand_2d_extractor = Hand2DModel('models/model_best_2.onnx')
-
     json_list = list()
-
-
     main()
 

@@ -6,10 +6,9 @@
 ## 输入数据集格式如："../imgdate"
 ## 对比auto_recoddistance.py 这里调用的数据集中gt数据可能存在 x=0 && y=0 的点表示没检测到所以没有标的
 ## 所以在计算欧氏距离时输入21个点而并非六个点
-
-from HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
-from Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
-from tools import mkdir, draw_2d_points, coords_to_box, jsonshow, draw_text
+from library.HandDet import HandDetModel  # provide a bound box of a hand（手掌检测）
+from library.Hand2D import Hand2DModel  # predicting the hand skeleton（预测手势）
+from library.tools import mkdir, draw_2d_points, coords_to_box, jsonshow, draw_text
 
 import cv2
 import time
@@ -17,19 +16,23 @@ import argparse
 import os
 import numpy as np
 
-from tools import L2Distance_calculation_HFB
+from library.tools import L2Distance_calculation_HFB
+
 
 def main():
     check(args.ImgDatePath, args.SavePath)
+
 
 def check(path, save_path):
     print(path)
     filenames = os.listdir(path)
     info_list = list()
+
     for filename in filenames:
         # a = os.path.isdir(os.path.join(path, filename))
         pts_2d = np.arange(21)
-        if os.path.isdir(os.path.join(path, filename)) and filename in ["images", "annotations", "train2017", "val2017", "test2017"]:
+        if os.path.isdir(os.path.join(path, filename)) \
+                and filename in ["images", "annotations", "train2017", "val2017", "test2017"]:
             # b = os.path.join(path, filename)
             save_path1 = os.path.join(save_path, filename)
             print(filename)
@@ -41,7 +44,6 @@ def check(path, save_path):
             if filename.endswith('.json'):
                 json_path = os.path.join(path, filename)
                 json_list.append(json_path)
-
 
             elif filename.endswith('.jpg'):
                 img_bgr = cv2.imread(os.path.join(path, filename))
@@ -83,10 +85,8 @@ def check(path, save_path):
 
                 # our_kp_points = pts_2d
                 print(filename)
-                #res = L2Distance_calculation_YT3D(gt_kp_points, our_kp_points, img_rgb)
+                # res = L2Distance_calculation_YT3D(gt_kp_points, our_kp_points, img_rgb)
                 res = L2Distance_calculation_HFB(gt_kp_points, pts_2d, img_rgb)
-
-
 
                 if res > 0:
                     # print(os.path.join(save_path, img_file))
@@ -105,7 +105,6 @@ def check(path, save_path):
                         img_txt = cv2.resize(img_txt, (700, 700), interpolation=cv2.INTER_LINEAR)
                         cv2.imwrite(os.path.join(gt_txt_path, filename), img_txt)
 
-
                         if cv2.waitKey(1) & 0xFF == ord('q'):
                             return
                     info = filename + '\t' + str(res) + '\n'
@@ -113,8 +112,6 @@ def check(path, save_path):
     with open((save_path + r'\\record.txt'), 'a') as f:
         for j in range(len(info_list)):
             f.write(info_list[j])
-            #print(filename)
-            #print("欧式距离为：" + str(res1) + '\n')
 
 
 if __name__ == '__main__':
@@ -154,7 +151,5 @@ if __name__ == '__main__':
     # hand_2d_extractor = Hand2DModel('models/model_best_2.onnx')
 
     json_list = list()
-
-
     main()
 

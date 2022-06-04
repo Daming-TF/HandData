@@ -8,6 +8,7 @@ parser = ArgumentParser()
 parser.add_argument("--json_folder", default=fr"E:\test_data\test_data_from_whole_body\test\annotations", help="json folder that has corresponding json files")      # G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\anno
 opts = parser.parse_args()
 
+
 def get_label_feature(json_path):
     with open(json_path, 'r') as f:
         json_data = json.load(f)

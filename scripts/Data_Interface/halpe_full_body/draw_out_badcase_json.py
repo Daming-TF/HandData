@@ -1,8 +1,9 @@
-import json
+import os
 
 badcase_txt = r'E:\Data\landmarks\HFB\test\badcase.txt'
 json_path = r'E:\Data\landmarks\HFB\HFB\annotations\person_keypoints_val2017.json'
 save_path = r'E:\Data\landmarks\HFB\test\crop_badcase.json'
+
 
 def main():
     # 得到所有badcase的图片名

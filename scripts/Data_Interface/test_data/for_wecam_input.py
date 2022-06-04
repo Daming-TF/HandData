@@ -1,11 +1,11 @@
 import os.path
-import json
 import cv2
 import mediapipe as mp
 import numpy as np
 from google.protobuf import json_format
+
 from convert_coco_format import convert_coco_format_from_wholebody
-from json_tools import make_json_head
+from library.json_tools import make_json_head
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles

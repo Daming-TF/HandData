@@ -1,6 +1,7 @@
 import json
 import os
 from tqdm import tqdm
+
 from .tools import get_file_list
 
 def update_from_invalid_json(json_data, invalid_sample_path, json_save_dir):

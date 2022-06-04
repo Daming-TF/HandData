@@ -4,13 +4,14 @@
 import os
 import cv2
 import mediapipe as mp
-from json_tools import make_json_head
 import numpy as np
 import json
 from tqdm import tqdm
-import time
-from convert_coco_format import convert_coco_format_from_wholebody
 from google.protobuf import json_format
+
+from convert_coco_format import convert_coco_format_from_wholebody
+from library.json_tools import make_json_head
+
 
 DATA_PATH = r"E:\left_hand_label_data\test"
 SAVE_PATH = r"E:\left_hand_label_data"
@@ -18,6 +19,7 @@ JSON_NAME = f'mediapipe-test.json'
 # JSON_DIR = r"G:\transmission\anno\v2_2_json\person_keypoints_test2017.json"
 
 num_joints = 21
+
 
 def json_data(data_dir, json_dir):
     img_dirs = []
@@ -39,6 +41,7 @@ def json_data(data_dir, json_dir):
 
     return img_dirs
 
+
 def main():
     cv2.namedWindow("aa", cv2.WINDOW_NORMAL)
     is_exists = os.path.exists(SAVE_PATH)
@@ -59,7 +62,6 @@ def main():
     print(f"There are {len(img_files)} images")
     # len(img_files)
     total_time = float(0)
-
 
     count = 0
     for index in tqdm(range(len(img_files))):
@@ -121,6 +123,7 @@ def main():
         json.dump(json_file, fw)
 
         print(f"{json_path} have succeed to write")
+
 
 if __name__ == "__main__":
     main()

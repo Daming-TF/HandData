@@ -1,13 +1,13 @@
 import argparse
 import os
 import numpy as np
-from json_tools import _init_save_folder, convert_coco_format
-import json
 import cv2
 import copy
 from tqdm import tqdm
 import json
 from random import shuffle
+
+from library.json_tools import _init_save_folder, convert_coco_format
 from vis_hand import canonical_coordinates, load_pickle_data, projectPoints, get_intrinsics
 
 COCOBBOX_FACTOR = 1.5
@@ -17,6 +17,7 @@ VAL_NUM, TEST_NUM = 1_500, 1_500
 Divide_1 = COCO_START_ID + TEST_NUM
 Divide_2 = Divide_1 + VAL_NUM
 # END = Divide_2 + TEST_NUM
+
 
 def main(save_dir, data_dir, coco_start_id):
     # 创建文件结构并返回coco规范的dict结构
@@ -79,9 +80,6 @@ def main(save_dir, data_dir, coco_start_id):
         if np.all(handJoints3D == 0) or np.all(handJoints3D == None):
             continue
 
-
-        # print(handJoints3D)
-
         if not handJoints3D.shape == (21, 3):
             print(img_dir + " is lost")
             continue
@@ -99,9 +97,9 @@ def main(save_dir, data_dir, coco_start_id):
             if not os.path.exists(img_path) or np.all(kp[2]) == 0:
                 continue
 
-
             img = cv2.imread(img_dir)
             img = cv2.flip(img, 1)
+
             if mode == "train2017":
                 flag = convert_coco_format(img, kp, json_trainfile, mode, save_dir, coco_id)
             if mode == "val2017":
@@ -120,11 +118,10 @@ def main(save_dir, data_dir, coco_start_id):
                 with open(os.path.join(save_dir, 'annotations', f'person_keypoints_val2017.json'), 'w') as fw:
                     json.dump(json_valfile, fw)
                     print("person_keypoints_val2017.json have succeed to write")
+
     with open(os.path.join(save_dir, 'annotations', f'person_keypoints_train2017.json'), 'w') as fw:
         json.dump(json_trainfile, fw)
         print("person_keypoints_train2017.json have succeed to write")
-
-
 
 
 if __name__ == "__main__":

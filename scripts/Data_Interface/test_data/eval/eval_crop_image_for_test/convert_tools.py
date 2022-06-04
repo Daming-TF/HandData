@@ -1,7 +1,7 @@
 import os
 import cv2
-import numpy as np
 import shutil
+import numpy as np
 
 COCOBBOX_FACTOR = 1.5
 CROP_FACTOR = 2.2

@@ -1,25 +1,22 @@
-import copy
 import json
 import os
-import shutil
 import numpy as np
-from tqdm import tqdm
 import cv2
-from json_tools import crop_box
-from tools import draw_2d_points
 from multiprocessing import Process
-import _thread
+
 import sys
 sys.path.append("../..")
-from weed_out_tool import ImageCrop
-
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
+from library.weed_out_tool import ImageCrop
 
 badcase_txt = r'F:\image\CMU\hand143_panopticdb\hand143_panopticdb\crop-image-badcase.txt'
 badcase_image_path = r'F:\image\CMU'
 image_path = r'F:\image\CMU\hand143_panopticdb\hand143_panopticdb'       # r'F:\image\coco\train'
-
-json_path = r'F:\image\CMU\hand143_panopticdb\hand143_panopticdb\hands_v143_14817.json'      # r'F:\image\coco\sort_coco_wholebody_train_v1.0.json'
+# r'F:\image\coco\sort_coco_wholebody_train_v1.0.json'
+json_path = r'F:\image\CMU\hand143_panopticdb\hand143_panopticdb\hands_v143_14817.json'
 save_path = r'F:\image\CMU\hand143_panopticdb\hand143_panopticdb\badcase'
+
 
 def check(landmarks, crop_landmarks, img):
     coco_kps = landmarks.copy()
@@ -45,7 +42,7 @@ def run_process(badcase_image_dir_list, image_json_info, annotations_json_info, 
     # 遍历badcase
     for badcase_dir in badcase_image_dir_list:
         badcase_image_dir = os.path.join(badcase_image_path, badcase_dir)
-        # image_crop.search(badcase_image_dir)
+        image_crop.search(badcase_image_dir)
 
     print(f"This is {len(badcase_image_dir_list)} badcase image")
     print(f'find matched {image_crop.get_count}===> finish process')

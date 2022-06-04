@@ -2,12 +2,12 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
+
+from library.tools import draw_2d_points
 
 data_path = r'E:\Data\landmarks\FreiHAND_pub_v2'
 newjson_dir = r'E:\数据标记反馈\3月4日交付\6133-2月28日打回.json'
-
 
 cv2.namedWindow('a', cv2.WINDOW_NORMAL)
 with open(newjson_dir, 'r', encoding='UTF-8') as f:

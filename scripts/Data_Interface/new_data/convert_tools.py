@@ -1,8 +1,7 @@
-
 import numpy as np
 import cv2
 import os
-from tools import draw_2d_points
+from library.tools import draw_2d_points
 
 NUM_JOINTS = 21
 
@@ -11,6 +10,7 @@ CROP_FACTOR = 2.2
 MIN_SIZE = 48
 DATA_CAPTURED = '2022-04-04 11:11:11'
 NUM_JOINTS = 21
+
 
 def refine_keypts(key_pts):
     coco_kps = np.zeros((21, 3), dtype=key_pts.dtype)

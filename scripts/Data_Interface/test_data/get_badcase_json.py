@@ -1,8 +1,8 @@
 import json
-import os
 import copy
 from tqdm import tqdm
-from json_tools import _init_save_folder
+from library.json_tools import _init_save_folder
+
 
 def main(upload_data_path_, json_path, save_path):
     json_head = _init_save_folder()

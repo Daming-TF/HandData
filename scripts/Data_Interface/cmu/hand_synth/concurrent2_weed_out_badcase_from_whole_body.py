@@ -1,17 +1,12 @@
-import copy
-import json
 import os
-import shutil
-import numpy as np
-from tqdm import tqdm
 import cv2
-from json_tools import crop_box
-from tools import draw_2d_points
 from multiprocessing import Process
+
 import sys
 sys.path.append("../../")
-from weed_out_tool import ImageCrop
-
+from library.weed_out_tool import ImageCrop
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
 
 badcase_txt = r'F:\image\CMU\hand_labels_synth\hand_labels_synth\crop-image-badcase.txt'        # crop-image-badcase.txt
 badcase_image_path = r'F:\image\CMU'       # crop-image路径(该路径指向+crop-image-badcase.txt可以指向badcase)
@@ -19,6 +14,7 @@ image_path = r'F:\image\CMU\hand_labels_synth\hand_labels_synth'        # 与全
 
 json_path = r'F:\image\CMU\hand_labels_synth\hand_labels_synth'     # CMU每张数据原图对应一个json文件
 save_path = r'F:\image\CMU\hand_labels_synth\hand_labels_synth\badcase'        # 数据保存路径
+
 
 def check(landmarks, crop_landmarks, img):
     coco_kps = landmarks.copy()

@@ -5,8 +5,9 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
+
+from library.tools import draw_2d_points
 
 data_path = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset'
 newjson_dir = r'E:\数据标记反馈\3月4日交付\6139-手势关键点-2022_2_15-7.json'

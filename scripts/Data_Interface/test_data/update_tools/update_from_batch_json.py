@@ -1,7 +1,8 @@
-from .tools import get_file_list, get_keypoints
 import os
 import json
 from tqdm import tqdm
+
+from .tools import get_file_list, get_keypoints
 
 
 def update_from_batch_json(json_data, batch_sample_path, save_dir, debug=False):

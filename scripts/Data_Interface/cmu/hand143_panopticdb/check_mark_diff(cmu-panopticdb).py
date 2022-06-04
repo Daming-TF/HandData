@@ -2,9 +2,10 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
-from json_tools import crop_box
+
+from library.tools import draw_2d_points
+from library.json_tools import crop_box
 
 data_path = r'F:\image\CMU\hand143_panopticdb\hand143_panopticdb\imgs'
 newjson_dir = r'E:\数据标记反馈\2月25日交付\6135-手势关键点-2022_2_15-5.json'

@@ -4,7 +4,7 @@ from collections import defaultdict
 import numpy as np
 from tqdm import tqdm
 import cv2
-from tools import draw_2d_points, VideoWriter
+from library.tools import draw_2d_points, VideoWriter
 from copy import deepcopy
 
 
@@ -87,7 +87,6 @@ def main():
                                             dt_mediapipe_full_annotations_dict, 'mediapipe-full')
         # dt_mediapipe_full_image = cv2.resize(dt_mediapipe_full_image, (int(gt_size[1]), int(gt_size[0])),
         #                                      interpolation=cv2.INTER_CUBIC)
-
 
         canves = np.concatenate([dt_mediapipe_full_image, gt_image], axis=1)
 

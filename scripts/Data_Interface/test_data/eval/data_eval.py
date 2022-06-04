@@ -3,11 +3,13 @@ from pycocotools.cocoeval import COCOeval
 import numpy as np
 from collections import OrderedDict
 import logging
-import pylab,json
+import pylab
+import json
 import matplotlib.pyplot as plt
 
 logger = logging.getLogger(__name__)
 full_arch_name = 'pose_hrnet'
+
 
 #  coco_results
 def evaluate_predictions_on_coco(

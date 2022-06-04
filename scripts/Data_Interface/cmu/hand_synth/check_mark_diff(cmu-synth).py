@@ -2,8 +2,9 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
 import copy
+
+from library.tools import draw_2d_points
 
 data_path = r'F:\image\CMU\hand_labels_synth\hand_labels_synth'
 newjson_dir = r'E:\数据标记反馈\cmu-synth(6131)\批次样本\6131-手势关键点-2022_2_15-3-第一批.json'

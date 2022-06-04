@@ -2,7 +2,7 @@ import json
 from tqdm import tqdm
 from convert_tools import convert_coco_format_from_wholebody
 import numpy as np
-from json_tools import make_json_head
+from library.json_tools import make_json_head
 
 
 def main():
@@ -34,6 +34,7 @@ def main():
     with open(save_dir, 'w')as f:
         json.dump(json_head, f)
         print(f"success to write in {save_dir}")
+
 
 if __name__ == "__main__":
     main()

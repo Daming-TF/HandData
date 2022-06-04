@@ -4,13 +4,10 @@ import requests
 import numpy as np
 from argparse import ArgumentParser
 
-name = 'zhiwen'
 parser = ArgumentParser()
 parser.add_argument("--img_folder", default=fr"G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\image", help="img folder that includes all imgs")
 parser.add_argument("--json_folder", default=fr"E:\Data\landmarks\handpose_x_gesture_v1\handpose_x_gesture_v1\badcase\upload json2", help="json folder that has corresponding json files")      # G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\anno
 opts = parser.parse_args()
-
-mode = f"{name}"
 
 
 def get_label_feature(json_path):

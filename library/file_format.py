@@ -7,6 +7,7 @@ import lmdb
 import h5py
 import time
 
+
 # 海量数据集读写测试函数
 # ---------------------- disk -------------------------- #
 def store_many_disk(images, disk_dir):
@@ -33,6 +34,8 @@ def store_many_disk(images, disk_dir):
             # This typically would be more than just one value per row
             writer.writerow([label])
     """""
+
+
 # ----------------------LMDB class-------------------------- #
 class CIFAR_Image():
     def __init__(self, image):
@@ -50,6 +53,7 @@ class CIFAR_Image():
         # 反序列化
         image = np.frombuffer(self.image, dtype=np.uint8)
         return image.reshape(*self.size, self.channels)
+
 
 # ----------------------LMDB -------------------------- #
 def store_many_lmdb(images, lmdb_dir):
@@ -76,6 +80,7 @@ def store_many_lmdb(images, lmdb_dir):
             key = f"{i:08}"
             txn.put(key.encode("ascii"), pickle.dumps(value))
     env.close()
+
 
 # ----------------------HDF5-------------------------- #
 def store_many_hdf5(images, hdf5_dir):

@@ -13,9 +13,8 @@ import os
 import json
 from tqdm import tqdm
 import numpy as np
-from collections import defaultdict
 
-from json_tools import get_ids, writer_v2_6
+from library.json_tools import get_ids, writer_v2_6
 from .convert_tools import get_file_list, get_keypoints
 
 data_path = r'F:\image\CMU\hand_labels\hand_labels'

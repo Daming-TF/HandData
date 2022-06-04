@@ -14,7 +14,8 @@ import scipy.misc
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import cv2
-from tools import draw_2d_points, draw_text
+
+from library.tools import draw_2d_points, draw_text
 
 # chose between training and evaluation set
 # set = 'training'
@@ -49,7 +50,6 @@ def coordinate_normalization(points):
     return kp
 
 
-
 # auxiliary function
 def depth_two_uint8_to_float(top_bits, bottom_bits):
     """ Converts a RGB-coded depth into float valued depth. """
@@ -57,7 +57,6 @@ def depth_two_uint8_to_float(top_bits, bottom_bits):
     depth_map /= float(2**16 - 1)
     depth_map *= 5.0
     return depth_map
-
 
 
 def main():
@@ -121,6 +120,7 @@ def main():
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             exit(0)
+
 
 if __name__ == "__main__":
     main()

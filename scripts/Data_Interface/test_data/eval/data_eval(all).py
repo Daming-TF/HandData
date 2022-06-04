@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 gt_suffix = '-gt.json'
 dt_suffix = '-mediapipe-full-id_start_from_1.json'     # _v2-full.json, --mediapipe.json, --mediapipe-lite.json, _v3-base.json, _v3-align.json
 
+
 #  coco_results
 def evaluate_predictions_on_coco(iou_type='keypoints'):
     vedio_names = ["hand_test_01", "hand_test_02", "hand_test_03", "hand_test_04", "hand_test_05", "hand_test_06",

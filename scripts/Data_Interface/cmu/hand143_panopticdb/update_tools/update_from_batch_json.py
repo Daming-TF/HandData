@@ -13,11 +13,9 @@ import os
 import json
 from tqdm import tqdm
 import numpy as np
-from collections import defaultdict
 
-from json_tools import get_ids, writer_v2_6
+from library.json_tools import get_ids, write_json
 from .convert_tools import get_file_list, get_keypoints
-from library.models.tools import bb_iou
 
 data_path = r'F:\image\CMU\hand143_panopticdb\hand143_panopticdb\imgs'
 
@@ -66,7 +64,7 @@ def update_from_batch_json(images_dict, annotations_dict, batch_sample_path, sav
             annotations_dict = update(annotations_dict, handlandmarks_list, image_id, get_start_coco_id(annotations_dict))
 
     if debug:
-        writer_v2_6(images_dict, annotations_dict, save_path)
+        write_json(images_dict, annotations_dict, save_path)
         print(f"There are >>{counter}<< data match")
 
 
@@ -160,10 +158,7 @@ def record_match(image_id, index, save_path, counter):
 #     for annotations_info in annotations_info_list:
 #         iou = bb_iou(crop_box(match_keypoints), crop_box(annotations_info['keypoints']))
 #         if iou > 0.5:
-#
-#
-#
-#
+
 #
 # def crop_box(keypoints, box_factor=1):
 #     coco_kps = keypoints.copy()

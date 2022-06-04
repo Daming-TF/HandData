@@ -1,6 +1,5 @@
 import json
 from tqdm import tqdm
-from copy import deepcopy
 
 
 def update_from_invalid_txt(json_data, ignore_dir, save_dir, debug=False):

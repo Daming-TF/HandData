@@ -3,14 +3,12 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 import json
-from json_tools import make_json_head
-from tools import draw_2d_points
+from library.json_tools import make_json_head
+from library.tools import draw_2d_points
 
 json_path = r"E:\Data\landmarks\HFB\test\halpe_train_v1.json"
 data_path1 = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset\hico_20160224_det\images\train2015'
 data_path2 = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset\hico_20160224_det\images\test2015'
-
-
 
 json_file = make_json_head()
 
@@ -24,7 +22,6 @@ for i in tqdm(range(data_len)):
     anno_info = annotation_list[i]
     landmarks = np.array(anno_info['keypoints']).reshape(136, 3)
 
-
     left_hand_keypoints = landmarks[94:115, :]
     right_hand_keypoints = landmarks[115:, :]
 
@@ -32,7 +29,6 @@ for i in tqdm(range(data_len)):
         continue
 
     id = anno_info["image_id"]
-
 
     for j in range(len(img_list)):
         img_info = img_list[j]

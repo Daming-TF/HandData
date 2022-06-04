@@ -1,17 +1,13 @@
-import copy
 import json
 import os
-import shutil
-import numpy as np
-from tqdm import tqdm
 import cv2
-from json_tools import crop_box
-from tools import draw_2d_points
 from multiprocessing import Process
-import _thread
+
 import sys
 sys.path.append("..")
-from weed_out_tool import ImageCrop
+from library.weed_out_tool import ImageCrop
+from library.json_tools import crop_box
+from library.tools import draw_2d_points
 
 
 badcase_txt = r'F:\Model_output\Output\coco\total_badcase_train.txt'
@@ -23,6 +19,7 @@ json_path = r'F:\image\coco\sort_coco_wholebody_train_v1.0.json'      # r'F:\ima
 # crop_json_path = r'E:\Data\landmarks\HFB\HFB\annotations\person_keypoints_train2017.json'
 save_path = r'F:\image\coco\badcase'
 # suspect_record_path = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset\suspect_image'
+
 
 def check(landmarks, crop_landmarks, img):
     coco_kps = landmarks.copy()
@@ -63,8 +60,8 @@ def main():
     for i in range(len(badcase_info)):
         badcase_image_dir = badcase_info[i].split('\n')[0]
         badcase_image_dir_list.append(badcase_image_dir)
-        num = len(badcase_image_dir_list)
 
+    num = len(badcase_image_dir_list)
 
     # 得到全身的json数据
     print(f"loading the whole body json:{json_path}")
@@ -72,6 +69,7 @@ def main():
         whole_json_data = json.load(whole_json)
         image_json_info = whole_json_data['images']
         annotations_json_info = whole_json_data['annotations']
+
         print(f'annotations length is {len(annotations_json_info)} pic date')
         block_len = len(image_json_info) // process_num
         demarcation = 0
@@ -113,13 +111,6 @@ def main():
                 print("SUCCESSED!!")
                 break
             i += parallel_process_num
-
-        # # 线程并发
-        # try:
-        #     for i in range(process_num):
-        #         _thread.start_new_thread(run_process, (badcase_image_dir_list, image_blocks[i], annotations_blocks[i], num, i,))
-        # except:
-        #     print("Error: 无法启动线程")
 
 
 if __name__ == '__main__':

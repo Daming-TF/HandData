@@ -2,16 +2,16 @@
     根据批次数据的json文件，重新覆盖我们的coco-json文件
 """
 import json
-
-import cv2
 from tqdm import tqdm
 import os
 import argparse
 import numpy as np
+
 from convert_crop_tools import convert_coco_format_from_crop
 
 COCO_START_ID = 1_500_000
 mode = 'train'
+
 
 def get_pic_num(data_path):
     count = 0
@@ -38,6 +38,7 @@ def get_file_list(file_path):
         # print(dir_list)
         return dir_list
 
+
 def set_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument("--TagJsonPath", help="重标打回数据的json文件路径",
@@ -54,6 +55,7 @@ def set_parser():
                         default=r"G:\test_data\hardcase_data\hardcase_from_crp_image\images")
     args = parser.parse_args()
     return args
+
 
 def get_keypoints(label_feature):
     handlandmarks_list = []
@@ -75,6 +77,7 @@ def get_keypoints(label_feature):
         hand2[:, 2] = 2
         handlandmarks_list.append(hand2)
     return handlandmarks_list
+
 
 def main():
     args = set_parser()
@@ -149,9 +152,6 @@ def main():
     with open(json_save_dir, 'w') as fw:
         json.dump(json_data, fw)
         print("train2017.json have succeed to write")
-
-
-
 
 
 if __name__ == '__main__':

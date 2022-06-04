@@ -1,12 +1,12 @@
-
 import pickle
 import numpy as np
 import cv2
 import os
 import json
 from tqdm import tqdm
-from json_tools import _init_save_folder
-from tools import draw_2d_points
+
+from library.json_tools import _init_save_folder
+from library.tools import draw_2d_points
 
 NUM_JOINTS = 21
 
@@ -152,6 +152,7 @@ def landmarks_mappling(landmarks, finger_tips):
     new_landmarks[20] = finger_tips[3]
 
     return new_landmarks
+
 
 def json_sort(json_dir):
     json_head = _init_save_folder()

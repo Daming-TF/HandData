@@ -2,7 +2,8 @@ import json
 import os
 import cv2
 import numpy as np
-from tools import draw_2d_points
+
+from library.tools import draw_2d_points
 
 json_path = r'E:\test_data\test_data_from_whole_body\upload_annotations'
 json_files = os.listdir(json_path)

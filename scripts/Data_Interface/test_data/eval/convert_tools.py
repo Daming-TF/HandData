@@ -1,7 +1,8 @@
 import numpy as np
 import cv2
 import os
-from tools import draw_2d_points
+
+from library.tools import draw_2d_points
 
 NUM_JOINTS = 21
 

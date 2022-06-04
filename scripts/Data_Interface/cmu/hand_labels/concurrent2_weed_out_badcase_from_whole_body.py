@@ -5,12 +5,13 @@ import shutil
 import numpy as np
 from tqdm import tqdm
 import cv2
-from json_tools import crop_box
-from tools import draw_2d_points
+from library.tools import draw_2d_points
 from multiprocessing import Process
+
 import sys
 sys.path.append("../../")
-from weed_out_tool import ImageCrop
+from library.weed_out_tool import ImageCrop
+from library.json_tools import crop_box
 
 
 badcase_txt = r'F:\image\CMU\hand_labels_synth\hand_labels_synth\crop-image-badcase.txt'        # crop-image-badcase.txt

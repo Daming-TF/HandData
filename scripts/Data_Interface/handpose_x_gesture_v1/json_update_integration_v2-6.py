@@ -2,7 +2,7 @@ import os
 import argparse
 import update_tools
 
-from json_tools import load_json_data
+from library.json_tools import load_json_data
 
 
 def set_parser():
@@ -46,3 +46,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    

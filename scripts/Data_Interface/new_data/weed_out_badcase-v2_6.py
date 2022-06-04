@@ -3,12 +3,12 @@ import os
 import numpy as np
 import cv2
 from multiprocessing import Process
+
 import sys
 sys.path.append("..")
-
-from tools import draw_2d_points
-from weed_out_tool import ImageCrop
-from json_tools import load_json_data
+from library.tools import draw_2d_points
+from library.weed_out_tool import ImageCrop
+from library.json_tools import load_json_data
 
 
 badcase_txt = r'G:\test_data\new_data\badcase.txt'

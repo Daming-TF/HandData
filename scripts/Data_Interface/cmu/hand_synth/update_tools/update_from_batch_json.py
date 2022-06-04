@@ -15,7 +15,7 @@ from tqdm import tqdm
 import numpy as np
 from collections import defaultdict
 
-from json_tools import get_ids, writer_v2_6
+from library.json_tools import get_ids, write_json
 from .convert_tools import get_file_list, get_keypoints
 
 data_path = r'F:\image\CMU\hand_labels_synth\hand_labels_synth'
@@ -66,7 +66,7 @@ def update_from_batch_json(images_dict, annotations_dict, batch_sample_path, sav
             annotations_dict = update(annotations_dict, handlandmarks_list, image_id, get_start_coco_id(annotations_dict))
 
     if debug:
-        writer_v2_6(images_dict, annotations_dict, save_path)
+        write_json(images_dict, annotations_dict, save_path)
         print(f"There are >>{counter}<< data match")
 
 

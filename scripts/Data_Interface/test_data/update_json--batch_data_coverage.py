@@ -12,6 +12,7 @@ import cv2
 COCO_START_ID = 1_400_000
 mode = 'test2017'
 
+
 def get_pic_num(data_path):
     count = 0
     file_names = os.listdir(data_path)
@@ -28,8 +29,6 @@ def get_pic_num(data_path):
     return count
 
 
-
-
 def get_file_list(file_path):
     dir_list = os.listdir(file_path)
     if not dir_list:
@@ -41,6 +40,7 @@ def get_file_list(file_path):
         dir_list = sorted(dir_list, key=lambda x: os.path.getmtime(os.path.join(file_path, x)))
         # print(dir_list)
         return dir_list
+
 
 def set_parser():
     parser = argparse.ArgumentParser()
@@ -58,6 +58,7 @@ def set_parser():
                         default=r"E:\test_data\test_data_from_whole_body\images")
     args = parser.parse_args()
     return args
+
 
 def get_keypoints(label_feature):
     handlandmarks_list = []
@@ -80,6 +81,7 @@ def get_keypoints(label_feature):
         handlandmarks_list.append(hand2)
     return handlandmarks_list
 
+
 def main():
     args = set_parser()
     tag_json_path = args.TagJsonPath        # 存放重标打回数据的路径
@@ -94,7 +96,6 @@ def main():
     print(f'There are >>{count} in the >>{search_path}<<')
     hand_coco_id = count + COCO_START_ID
     image_coco_id = hand_coco_id
-
 
     # 读取原本json信息
     print(f'loading the file >>{json_dir}<<')
@@ -157,9 +158,6 @@ def main():
     with open(json_save_dir, 'w') as fw:
         json.dump(json_data, fw)
         print("train2017.json have succeed to write")
-
-
-
 
 
 if __name__ == '__main__':

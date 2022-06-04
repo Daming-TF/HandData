@@ -4,8 +4,9 @@ from collections import defaultdict
 import numpy as np
 from tqdm import tqdm
 import cv2
-from tools import draw_2d_points, VideoWriter
 from copy import deepcopy
+
+from library.tools import draw_2d_points, VideoWriter
 
 
 def load_json_data(json_dir):
@@ -48,11 +49,11 @@ def main():
 
     for video_id in video_name:
         gt_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\gt\{video_id}\{video_id}--gt.json'
-        # dt_v3_base_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v3-base.json'
-        # dt_v3_align_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v3-align.json'
-        # dt_v2_full_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v2-full.json'
-        # dt_v1_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v1.json'
-        # dt_mediapipe_full_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}--mediapipe.json'
+        dt_v3_base_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v3-base.json'
+        dt_v3_align_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v3-align.json'
+        dt_v2_full_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v2-full.json'
+        dt_v1_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}_v1.json'
+        dt_mediapipe_full_dir = fr'E:\test_data\test_data_from_whole_body\annotations\coco_eval\dt\{video_id}\{video_id}--mediapipe.json'
 
         video_name = fr'{video_id}.mp4'
         video_dir = fr'E:\test_data\test_video\{video_name}'

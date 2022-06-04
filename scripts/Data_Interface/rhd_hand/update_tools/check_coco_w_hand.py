@@ -3,7 +3,7 @@ import json
 import os
 from collections import defaultdict
 import numpy as np
-from library.models.tools import draw_2d_points
+from library.tools import draw_2d_points
 
 
 def main():

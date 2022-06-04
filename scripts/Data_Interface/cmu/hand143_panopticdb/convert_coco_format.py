@@ -1,11 +1,12 @@
 import argparse
 import os
 import numpy as np
-from json_tools import _init_save_folder, convert_coco_format
 import json
 import cv2
 import copy
 from tqdm import tqdm
+
+from library.json_tools import _init_save_folder, convert_coco_format
 
 COCOBBOX_FACTOR = 1.5
 COCO_START_ID = 900_000
@@ -50,6 +51,7 @@ def main(save_dir, json_dir, coco_start_id):
                     flag = convert_coco_format(img, kp, json_testfile, mode, save_dir, coco_id)
                 if flag == 1:
                     coco_id += 1
+
         with open(os.path.join(save_dir, 'annotations', f'person_keypoints_train2017.json'), 'w') as fw:
             json.dump(json_trainfile, fw)
             print("person_keypoints_train2017.json have succeed to write")

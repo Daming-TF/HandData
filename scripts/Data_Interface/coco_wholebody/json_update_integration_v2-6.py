@@ -1,8 +1,14 @@
+"""
+功能：对标注团队反馈的数据自动化一条龙处理，处理流程：
+    1）覆盖 batch data
+    2）删除 invalid data
+"""
+
 import os
 import argparse
 import update_tools
 
-from json_tools import load_json_data
+from library.json_tools import load_json_data
 
 
 def set_parser():

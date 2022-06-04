@@ -1,16 +1,19 @@
+"""
+功能： 把错误数据上传到“金标标V3”平台
+"""
+
 import json
 import os
 import requests
 import numpy as np
 from argparse import ArgumentParser
 
-name = 'zhiwen'
 parser = ArgumentParser()
-parser.add_argument("--img_folder", default=fr"G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\image", help="img folder that includes all imgs")
-parser.add_argument("--json_folder", default=fr"F:\image\coco\badcase\upload json", help="json folder that has corresponding json files")      # G:\test_data\hardcase_data\dataset\{name}\need_to_tag_data\anno
-opts = parser.parse_args()
+parser.add_argument("--json_folder",
+                    default=fr"F:\image\coco\badcase\upload json",
+                    help="json folder that has corresponding json files")
 
-mode = f"{name}"
+opts = parser.parse_args()
 
 
 def get_label_feature(json_path):
@@ -79,7 +82,6 @@ class Requester(object):
 def main():
     # 数据上传初始化设置
     requester = Requester()
-
     # 数据路径和注释路径分别排序存储
     # img_paths = sorted([os.path.join(opts.img_folder, file) for file in os.listdir(opts.img_folder)
     #                     if file.endswith('.jpg') or file.endswith('.png') or file.endswith('.jpeg')])
@@ -94,9 +96,6 @@ def main():
             json_data = json.load(f)
             img_dir = json_data['images'][0]['file_name']
             img_paths.append(img_dir)
-
-
-
 
     assert len(img_paths) == len(json_paths), print("Number of images and number of json-files are different!")
 

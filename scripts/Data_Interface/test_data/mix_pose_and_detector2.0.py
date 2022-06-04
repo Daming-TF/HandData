@@ -1,13 +1,14 @@
 """
 采集test数据集之后，有些场景detector效果差，一些场景肢体关键点差，所以通过该程序可以融合他们优点
 """
+import cv2
 import copy
 import json
-from json_tools import _init_save_folder, crop_min_box
 import numpy as np
 from tqdm import tqdm
-from tools import draw_2d_points
-import cv2
+
+from library.json_tools import _init_save_folder, crop_box
+from library.tools import draw_2d_points
 
 
 # v3pose_json_dir = r'E:\test_data\test_data_from_whole_body\annotations\v3-pose-video.json'
@@ -64,7 +65,7 @@ def compare_object(hand_prieds_pose, det_keypoints, th=8):
     diff = 1000000
     res = None
     hand_prieds_pose[:, 2] = 2
-    size = crop_min_box(hand_prieds_pose)
+    size = crop_box(hand_prieds_pose)
     # 转化坐标
     for index, det_prieds in enumerate(det_keypoints):
         det_prieds = np.array(det_prieds).reshape(21, 3)

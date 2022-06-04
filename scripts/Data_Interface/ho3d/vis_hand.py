@@ -1,10 +1,10 @@
-import copy
 import os
 import pickle
 import numpy as np
 import cv2
-from tools import draw_2d_points
-from tqdm import tqdm
+
+from library.tools import draw_2d_points
+
 
 def canonical_coordinates(points):
     kp = np.ones(63).reshape(21,3)
@@ -45,12 +45,14 @@ def load_pickle_data(f_name):
 
     return pickle_data
 
+
 def projectPoints(xyz, K):
     """ Project 3D coordinates into image space. """
     xyz = np.array(xyz)
     K = np.array(K)
     uv = np.matmul(K, xyz.T).T
     return uv[:] / uv[:, -1:]
+
 
 def get_intrinsics(filename):
     with open(filename, 'r') as f:
@@ -69,6 +71,7 @@ def get_intrinsics(filename):
 
     camMat = np.array([[fx, 0, ppx], [0, fy, ppy], [0, 0, 1]])
     return camMat
+
 
 def main():
     data_path = r"F:\image\HO3D\HO3D_v3\HO3D_v3\HO3D_v3\evaluation\SB13\rgb"

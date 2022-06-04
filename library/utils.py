@@ -3,6 +3,7 @@ import numpy as np
 import math
 from astropy.convolution import convolve, Gaussian2DKernel
 
+
 def box_to_center_scale(box, model_image_width, model_image_height):
     """convert a box to center,scale information required for pose transformation
     Parameters
@@ -40,9 +41,11 @@ def box_to_center_scale(box, model_image_width, model_image_height):
 
     return center, scale
 
+
 def get_3rd_point(a, b):
     direct = a - b
     return b + np.array([-direct[1], direct[0]], dtype=np.float32)
+
 
 def get_dir(src_point, rot_rad):
     sn, cs = np.sin(rot_rad), np.cos(rot_rad)
@@ -82,10 +85,12 @@ def get_affine_transform(center, scale, rot, output_size, shift=np.array([0, 0],
         trans = cv2.getAffineTransform(np.float32(src), np.float32(dst))
     return trans
 
+
 def affine_transform(pt, t):
     new_pt = np.array([pt[0], pt[1], 1.]).T
     new_pt = np.dot(t, new_pt)
     return new_pt[:2]
+
 
 def transform_preds(coords, center, scale, output_size):
     target_coords = np.zeros(coords.shape)
@@ -93,6 +98,7 @@ def transform_preds(coords, center, scale, output_size):
     for p in range(coords.shape[0]):
         target_coords[p, 0:2] = affine_transform(coords[p, 0:2], trans)
     return target_coords
+
 
 def get_max_preds(batch_heatmaps):
     '''

@@ -1,13 +1,15 @@
 import argparse
 import os
 import numpy as np
-from json_tools import _init_save_folder, convert_coco_format
 import json
 import cv2
 import copy
 from tqdm import tqdm
 
+from library.json_tools import _init_save_folder, convert_coco_format
+
 COCOBBOX_FACTOR = 1.5
+
 
 def main(save_dir, coco_start_id):
     # 创建文件结构并返回coco规范的dict结构
@@ -54,10 +56,6 @@ f'''
 
 '''
                 )
-
-
-
-
 
 
 if __name__ == "__main__":

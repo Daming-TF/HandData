@@ -2,13 +2,13 @@
     根据批次数据的json文件，重新覆盖我们的coco-json文件
 """
 import json
-
-import cv2
 from tqdm import tqdm
 import os
 import argparse
 import numpy as np
+
 from convert_tools import convert_coco_format_from_wholebody
+
 
 COCO_START_ID = 3_00_000
 mode = 'train'
@@ -56,6 +56,7 @@ def set_parser():
     args = parser.parse_args()
     return args
 
+
 def get_keypoints(label_feature):
     handlandmarks_list = []
     hand1 = np.zeros((21, 3))
@@ -76,6 +77,7 @@ def get_keypoints(label_feature):
         hand2[:, 2] = 2
         handlandmarks_list.append(hand2)
     return handlandmarks_list
+
 
 def main():
     args = set_parser()
@@ -154,9 +156,6 @@ def main():
     with open(json_save_dir, 'w') as fw:
         json.dump(json_data, fw)
         print("train2017.json have succeed to write")
-
-
-
 
 
 if __name__ == '__main__':

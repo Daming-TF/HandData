@@ -48,8 +48,5 @@ def main():
     update_tools.update_from_invalid_json(json_data, invalid_json_path, save_dir)
 
 
-
-
-
 if __name__ == '__main__':
     main()

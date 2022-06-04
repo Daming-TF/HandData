@@ -2,7 +2,7 @@ import json
 import os
 from tqdm import tqdm
 from .convert_tools import get_file_list
-from library.models.json_tools import get_ids, writer_v2_6
+from library.json_tools import get_ids, write_json
 
 data_path = r'E:\Data\landmarks\HFB\halpe_Full-Body_Human_Keypoints_and_HOL-Det_dataset'
 
@@ -50,7 +50,7 @@ def update_from_invalid_json(images_dict, annotations_dict, invalid_sample_path,
             annotations_dict.pop(image_id)
             images_dict.pop(image_id)
 
-    writer_v2_6(images_dict, annotations_dict, json_save_path)
+    write_json(images_dict, annotations_dict, json_save_path)
     print(f"There are >>{counter}<< data match")
 
 

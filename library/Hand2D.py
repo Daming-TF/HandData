@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import onnxruntime
 from utils import box_to_center_scale, get_affine_transform, get_final_preds
-import time 
+
 
 class Hand2DModel(object):
     def __init__(self, model_path):
