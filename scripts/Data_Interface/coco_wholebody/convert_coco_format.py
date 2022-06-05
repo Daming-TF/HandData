@@ -1,3 +1,7 @@
+"""
+功能： 对开源数据预处理得到需要的crop image并生成对应的json文件
+"""
+
 import argparse
 import os
 import numpy as np

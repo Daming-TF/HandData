@@ -1,3 +1,8 @@
+"""
+功能：根据crop image badcase数据多进程并发寻找whole image与之匹配的图像关系，最后输出whole image badcase的txt文件
+
+"""
+
 import json
 import os
 import cv2

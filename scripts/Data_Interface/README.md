@@ -1,5 +1,48 @@
 # 目录
 ## 文件结构与功能概要
+![image](https://github.com/Daming-TF/HandData/blob/master/material/%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D.jpg.jpg)  
+Data_Interface文件夹主要用于处理不同的开源数据集，转化为训练所需要的coco格式json文件；主要功能如下：  
+- [x] 生成训练数据集  
+  - 全图模式
+  - 剪裁模式（预处理）
+- [x] 重新标注数据处理 
+  - 数据上传
+  - 检查重标数据质量
+  - 数据覆盖更新
+- [x] 原始数据可视化
+- [x] 其他工具
+  - 检查分辨率分布
+  - 全图和剪裁图片badcase对应关系
+
+
+![image](https://github.com/Daming-TF/HandData/blob/master/material/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png)  
+Data_Interface 的每一个子目录对应一个开源数据的处理接口
+```Note```: cmu目录下有三个开源数据集的子目录  
+以上图的coco_wholebody作为例子：
+- check_mark_diff.py  
+```Note```:  
+主要用于检查标注团队反馈回来的数据质量如何，便于作出反馈
+- concurrent2_weed_out_badcase_from_whole_body.py  
+```Note```:  
+由于开始使用预处理数据crop image作为训练数据，前面做了一些数据清洗工作都是基于crop image展开， 后面为了更好保留数据信息希望把所有信息转移到全图上，后面运用到其他任务或者想做其他数据处理比较方便， 所以需要把crop image badcase和whole image的联系起来找到whole image中的badcase
+- convert_coco_format.py  
+```Note```:  
+原始数据预处理得到训练所需要的crop image以及json文件
+- convert_coco_format_from_whole_body-v2_6.py  
+```Note```:  
+原始数据预处理得到训练所需要的whole image以及json文件
+- data_update  
+```Note```:  
+重标数据上传到标注平台  
+- update_json--batch_data_coverage.py  
+```Note```:  
+重标数据经由标注平台重新标注返回批次数据以及无效数据，该程序是根据批次数据对训练数据进行覆盖操作
+- update_json--invalid_data_coverage.py
+```Note```:  
+去除标注团队反馈的无效样本
+- json_update_integration_v2-6.py  
+```Note```:  
+重标数据一体化更新程序包括：1.根据txt文件去除自检的无效样本数据；2.根据标注团队反馈的批次数据对数据进行覆盖；3.去除标注团队反馈回来的无效样本
 
 ## 数据集介绍
 ### 1) You Tube 3D Hands(YT 3D)

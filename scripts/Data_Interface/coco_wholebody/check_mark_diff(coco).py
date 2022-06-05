@@ -1,3 +1,6 @@
+"""
+功能：查看重新标注反馈回来的数据与原数据差异，统计不合格数量作出反馈
+"""
 import json
 import os
 import cv2
