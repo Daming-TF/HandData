@@ -13,7 +13,7 @@
         The dataset contains 3D vertex coordinates of 50,175 hand meshes aligned with in the wild images comprising hundreds of subjects performing a wide variety of tasks.
 The training set was generated from 102 videos resulting in 47,125 hand annotations. The validation and test sets cover 7 videos with an empty intersection of subjects with the training set and contain 1,525 samples each.
 The dataset has been collected in a fully automated manner. Please, refer to our paper for the details.https://github.com/arielai/youtube_3d_hands.git  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/YT3D.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/YT3D.jpg)
 
 
 ### 2) Halpe Full-Body Human Keypoints and HOI-Det dataset
@@ -25,7 +25,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 
 `Introduction`:  
         Halpe is a joint project under AlphaPose and HAKE. It aims at pushing Human Understanding to the extreme. We provide detailed annotation of human keypoints, together with the human-object interaction trplets from HICO-DET. For each person, we annotate 136 keypoints in total, including head,face,body,hand and foot. Below we provide some samples of Halpe dataset.  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/HFB.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/HFB.jpg)
 
 
 ## 3) 静态手势识别数据集 (handpose_x_gesture_v1)
@@ -37,7 +37,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 
 `Introduction`:  
         数据集来源3部分，且网上数据占绝大多数，具体：1）来源于网上数据并自制；2）来源于自己相机采集并自制；3）来源于Kinect_leap_dataset数据集并自制，其官方网址为: https://lttm.dei.unipd.it/downloads/gesture/  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/HXG.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/HXG.jpg)
 
 
 ### 4) FreiHand Dataset
@@ -57,7 +57,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 - 3D shape annotation  
 
     The training set contains 32,560 unique samples post processed in 4 different ways to remove the green screen background. Each evaluation sample provides an RGB image, Hand scale and intrinsic camera matrix. The keypoint and shape annotation is withhold and scoring of algorithms is handled through our Codalab evaluation server. For additional information please visit our project page.
-![image](https://github.com/Daming-TF/HandData/blob/master/material/FH.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/FH.jpg)
 
 
 ### 5) MPII Human Pose Dataset
@@ -68,9 +68,9 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 2. CMUsynth: Hands from Synthetic Data (6546 + 3243 + 2348 + 2124 = 14261 annotations)
 3. CMUpanopticDB: Hands from Panoptic Studio by Multiview Bootstrapping (14817 annotations) 
 
-![image](https://github.com/Daming-TF/HandData/blob/master/material/CMU1.png)  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/CMU2.png)  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/CMU3.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/CMU1.jpg)  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/CMU2.jpg)  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/CMU3.jpg)
 
 
 ### 6) Rendered Handpose Dataset (RHD)
@@ -89,7 +89,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 - Intrinsic Camera Matrix K  
 
     It was created with freely available characters from www.mixamo.com and rendered with www.blender.org. For more details on how the dataset was created please see the mentioned paper.  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/RHD.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/RHD.jpg)
 
 
 ### 7) COCO-WholeBody
@@ -100,8 +100,8 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 `Introduction` :  
         COCO-WholeBody dataset is the first large-scale benchmark for whole-body pose estimation. It is an extension of COCO 2017 dataset with the same train/val split as COCO.
 For each person, we annotate 4 types of bounding boxes (person box, face box, left-hand box, and right-hand box) and 133 keypoints (17 for body, 6 for feet, 68 for face and 42 for hands). The face/hand box is defined as the minimal bounding rectangle of the keypoints.   
-![image](https://github.com/Daming-TF/HandData/blob/master/material/COCO.png)  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/COCO2.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/COCO.jpg)  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/COCO2.jpg)
 
 
 ### 8) Multiview Hand Pose
@@ -117,7 +117,7 @@ Along with the dataset itself, it is provided also a set of python scripts (in t
 - generateBBoxes.py: It will create the bounding box of the hands for each image  
 
         As earlier explained, it is required calibration data to generate these annotations. The calibration data we provide consists of rotation and translation matrices. We released both R and T matrices for each camera for each sequence. You will find rvec.pkl and tvec.pkl which are pickle serialized files of numpy matrices that contains the calibration data.  
-        ![image](https://github.com/Daming-TF/HandData/blob/master/material/MHP.png)
+        ![image](https://github.com/Daming-TF/HandData/blob/master/material/MHP.jpg)
 
 
 ### 9) NYU Hand
@@ -128,7 +128,7 @@ TOG'14 (Presented at SIGGRAPH'14)
 
 `Introduction` :  
         The NYU Hand pose dataset contains 8252 test-set and 72757 training-set frames of captured RGBD data with ground-truth hand-pose information. For each frame, the RGBD data from 3 Kinects is provided: a frontal view and 2 side views. The training set contains samples from a single user only (Jonathan Tompson), while the test set contains samples from two users (Murphy Stein and Jonathan Tompson). A synthetic re-creation (rendering) of the hand pose is also provided for each view.（216 篇学术文章引用了此数据集） They also provide the predicted joint locations from our ConvNet (for the test-set) so you can compare performance. Note: for real-time prediction we used only the depth image from Kinect 1. The source code to fit the hand-model to the depth frames here can be found：https://github.com/jonathantompson/ModelFit.git  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/NYU.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/NYU.jpg)
 
 
 ### 10) InterHand2.6M dataset
@@ -140,7 +140,7 @@ TOG'14 (Presented at SIGGRAPH'14)
 
 `Introducyion` :  
         The InterHand2.6M dataset is a large-scale real-captured dataset with accurate GT 3D interacting hand poses, used for 3D hand pose estimation The dataset contains 2.6M labeled single and interacting hand frames.  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/InterHand2.6M.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/InterHand2.6M.jpg)
 
 
 ### 11) HO3D
@@ -156,8 +156,8 @@ TOG'14 (Presented at SIGGRAPH'14)
 - Seen object and unseen hand: Sequences MPM10, MPM11, MPM12, MPM13 and MPM14  
 
         contain a subject with different hand shape and color andis not part of the training set.  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/HO3D1.png)  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/HO3D2.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/HO3D1.jpg)  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/HO3D2.jpg)
 
 
 ### 12) RGB2Hands
@@ -167,7 +167,7 @@ TOG'14 (Presented at SIGGRAPH'14)
 
 `Introduction`: 
         RGB2Hands is an RGB dataset for evaluating algorithms that tracks two hands during interactions. It consists of 4 sequences with varying types of hand-hand interactions. Hand joints locations were manually annotated on paired RGB and Depth images to provided 3D and 2D annotations. 
-![image](https://github.com/Daming-TF/HandData/blob/master/material/RGB2Hands.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/RGB2Hands.jpg)
 
 
 ### 13) EgoHands
@@ -180,6 +180,6 @@ TOG'14 (Presented at SIGGRAPH'14)
 high quality, pixel-level segmentations of hands the possibility to semantically distinguish between the observer’s hands and someone else’s hands, as well as left and right hands
 virtually unconstrained hand poses as actors freely engage in a set of joint activities
 lots of data with 15,053 ground-truth labeled hands  
-![image](https://github.com/Daming-TF/HandData/blob/master/material/EgoHands.png)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/EgoHands.jpg)
 
 
