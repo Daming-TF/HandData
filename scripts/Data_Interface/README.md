@@ -1,6 +1,6 @@
 # 目录
 ## 文件结构与功能概要
-![image](https://github.com/Daming-TF/HandData/blob/master/material/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.jpg)  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D.jpg)  
 Data_Interface文件夹主要用于处理不同的开源数据集，转化为训练所需要的coco格式json文件；主要功能如下：  
 - [x] 生成训练数据集  
   - 全图模式
@@ -15,7 +15,7 @@ Data_Interface文件夹主要用于处理不同的开源数据集，转化为训
   - 全图和剪裁图片badcase对应关系
 
 
-![image](https://github.com/Daming-TF/HandData/blob/master/material/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png)  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.jpg)  
 Data_Interface 的每一个子目录对应一个开源数据的处理接口
 ```Note```: cmu目录下有三个开源数据集的子目录  
 以上图的coco_wholebody作为例子：
