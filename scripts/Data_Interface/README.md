@@ -60,7 +60,7 @@ Data_Interface 的每一个子目录对应一个开源数据的处理接口
 
 
 
-### 1.You Tube 3D Hands(YT3D)
+### You Tube 3D Hands(YT3D)
 `Homepage`: https://www.arielai.com/mesh_hands/  
 
 `Git`: https://github.com/arielai/youtube_3d_hands/  
