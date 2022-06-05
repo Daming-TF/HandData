@@ -240,7 +240,7 @@ TOG'14 (Presented at SIGGRAPH'14)
 
 `Introduction`: 
         RGB2Hands is an RGB dataset for evaluating algorithms that tracks two hands during interactions. It consists of 4 sequences with varying types of hand-hand interactions. Hand joints locations were manually annotated on paired RGB and Depth images to provided 3D and 2D annotations. 
-![image](https://github.com/Daming-TF/HandData/blob/master/material/RGB2Hands.jpg)
+![image](https://github.com/Daming-TF/HandData/blob/master/material/RGB2Hand.jpg)
 
 
 ### EgoHands

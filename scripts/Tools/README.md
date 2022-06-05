@@ -53,8 +53,8 @@
 
 ## Visualization-Tools——可视化工具库
 ### 模型参数和运算量对比可视化
-通过读取excel把每个训练模型的params，MFlops，F1，Model，Resolution，Alpha，Decoder信息读取并画到图标上 ，效果如下图： 
-![image]()  
+通过读取excel把每个训练模型的params，MFlops，F1，Model，Resolution，Alpha，Decoder信息读取并画到图标上 ，效果如下图：  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/plot.jpg)  
 
 
 ### 训练数据/标注数据可视化
