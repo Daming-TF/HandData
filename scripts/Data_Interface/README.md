@@ -1,5 +1,10 @@
 # 目录
-## 文件结构与功能概要
+- [功能介绍](#功能介绍)
+- [文件结构](#文件结构)
+- [数据集介绍](#数据集介绍)  
+
+
+## 功能介绍
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D.jpg)  
 Data_Interface文件夹主要用于处理不同的开源数据集，转化为训练所需要的coco格式json文件；主要功能如下：  
 - [x] 生成训练数据集  
@@ -15,6 +20,7 @@ Data_Interface文件夹主要用于处理不同的开源数据集，转化为训
   - 全图和剪裁图片badcase对应关系
 
 
+## 文件结构
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.jpg)  
 Data_Interface 的每一个子目录对应一个开源数据的处理接口
 ```Note```: cmu目录下有三个开源数据集的子目录  
@@ -44,8 +50,17 @@ Data_Interface 的每一个子目录对应一个开源数据的处理接口
 ```Note```:  
 重标数据一体化更新程序包括：1.根据txt文件去除自检的无效样本数据；2.根据标注团队反馈的批次数据对数据进行覆盖；3.去除标注团队反馈回来的无效样本
 
+
 ## 数据集介绍
-### 1) You Tube 3D Hands(YT 3D)
+- [You Tube 3D Hands](#1.You Tube 3D Hands(YT 3D))
+- [Halpe Full-Body Human Keypoints and HOI-Det dataset](#2.Halpe Full-Body Human Keypoints and HOI-Det dataset)
+- [handpose_x_gesture_v1](#3.handpose_x_gesture_v1(静态手势识别数据集))
+- [FreiHand Dataset](#4.FreiHand Dataset)
+- [MPII Human Pose Dataset](#5.MPII Human Pose Dataset)
+
+
+
+### 1.You Tube 3D Hands(YT3D)
 `Homepage`: https://www.arielai.com/mesh_hands/  
 
 `Git`: https://github.com/arielai/youtube_3d_hands/  
@@ -59,7 +74,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/YT3D.jpg)
 
 
-### 2) Halpe Full-Body Human Keypoints and HOI-Det dataset
+### 2.Halpe Full-Body Human Keypoints and HOI-Det dataset
 `Git`: https://github.com/Fang-Haoshu/Halpe-FullBody  
 
 `Paper`: 
@@ -71,7 +86,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/HFB.jpg)
 
 
-## 3) 静态手势识别数据集 (handpose_x_gesture_v1)
+## 3.handpose_x_gesture_v1(静态手势识别数据集)
 `Homepage`: https://codechina.csdn.net/EricLee/classification  
 
 `Paper`:
@@ -83,7 +98,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/HXG.jpg)
 
 
-### 4) FreiHand Dataset
+### 4.FreiHand Dataset
 `Homepage`: https://lmb.informatik.uni-freiburg.de/projects/freihand/  
 
 `Git`: https://github.com/lmb-freiburg/freihand  
@@ -103,7 +118,7 @@ The dataset has been collected in a fully automated manner. Please, refer to our
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/FH.jpg)
 
 
-### 5) MPII Human Pose Dataset
+### 5.MPII Human Pose Dataset
 `Homepage`: http://domedb.perception.cs.cmu.edu/handdb.html
 `Paper`：Hand Keypoint Detection in Single Images using Multiview Bootstrapping, CVPR2017
 `Introduction`: 该数据集主要有三部分组成：
