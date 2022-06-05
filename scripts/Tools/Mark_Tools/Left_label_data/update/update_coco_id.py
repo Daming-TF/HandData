@@ -1,6 +1,6 @@
 import json
 
-from json_tools import make_json_head
+from library.json_tools import make_json_head
 
 json_path = r'E:\left_hand_label_data\annotations\person_keypoints_train2017.json'
 save_path = r'E:\left_hand_label_data\annotations\id_update\person_keypoints_train2017.json'

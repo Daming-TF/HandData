@@ -1,7 +1,7 @@
 from copy import deepcopy
 from tqdm import tqdm
 
-from json_tools import load_json_data, write_json, get_ids
+from library.json_tools import load_json_data, write_json, get_ids
 
 json_path = fr'E:\left_hand_label_data\annotations\v2_6\person_keypoints_train2017-update.json'
 

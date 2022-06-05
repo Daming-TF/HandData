@@ -1,8 +1,11 @@
+"""
+功能：检查指定的训练json文件所有训练数据路径是否存在
+"""
+
 import json
-import cv2
 from tqdm import tqdm
 import os
-from tools import draw_2d_points
+from library.tools import draw_2d_points
 import numpy as np
 
 mode_list = ['test', 'train', 'val']

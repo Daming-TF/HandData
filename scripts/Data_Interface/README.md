@@ -1,4 +1,6 @@
-# 目录
+# Data Interface——开源数据处理板块
+
+## 目录
 - [功能介绍](#功能介绍)
 - [文件结构](#文件结构)
 - [数据集介绍](#数据集介绍)  
@@ -25,30 +27,36 @@ Data_Interface文件夹主要用于处理不同的开源数据集，转化为训
 Data_Interface 的每一个子目录对应一个开源数据的处理接口
 ```Note```: cmu目录下有三个开源数据集的子目录  
 以上图的coco_wholebody作为例子：
-- check_mark_diff.py  
-```Note```:  
-主要用于检查标注团队反馈回来的数据质量如何，便于作出反馈
-- concurrent2_weed_out_badcase_from_whole_body.py  
-```Note```:  
-由于开始使用预处理数据crop image作为训练数据，前面做了一些数据清洗工作都是基于crop image展开， 后面为了更好保留数据信息希望把所有信息转移到全图上，后面运用到其他任务或者想做其他数据处理比较方便， 所以需要把crop image badcase和whole image的联系起来找到whole image中的badcase
-- convert_coco_format.py  
-```Note```:  
-原始数据预处理得到训练所需要的crop image以及json文件
-- convert_coco_format_from_whole_body-v2_6.py  
-```Note```:  
-原始数据预处理得到训练所需要的whole image以及json文件
-- data_update  
-```Note```:  
-重标数据上传到标注平台  
-- update_json--batch_data_coverage.py  
-```Note```:  
-重标数据经由标注平台重新标注返回批次数据以及无效数据，该程序是根据批次数据对训练数据进行覆盖操作
-- update_json--invalid_data_coverage.py
-```Note```:  
-去除标注团队反馈的无效样本
-- json_update_integration_v2-6.py  
-```Note```:  
-重标数据一体化更新程序包括：1.根据txt文件去除自检的无效样本数据；2.根据标注团队反馈的批次数据对数据进行覆盖；3.去除标注团队反馈回来的无效样本
+- **check_mark_diff.py**  
+```Note```: 主要用于检查标注团队反馈回来的数据质量如何，便于作出反馈
+
+
+- **concurrent2_weed_out_badcase_from_whole_body.py**  
+```Note```: 由于开始使用预处理数据crop image作为训练数据，前面做了一些数据清洗工作都是基于crop image展开， 后面为了更好保留数据信息希望把所有信息转移到全图上，后面运用到其他任务或者想做其他数据处理比较方便， 所以需要把crop image badcase和whole image的联系起来找到whole image中的badcase
+
+
+- **convert_coco_format.py**  
+```Note```: 原始数据预处理得到训练所需要的crop image以及json文件
+
+
+- **convert_coco_format_from_whole_body-v2_6.py**  
+```Note```: 原始数据预处理得到训练所需要的whole image以及json文件
+
+
+- **data_update**  
+```Note```: 重标数据上传到标注平台  
+
+
+- **update_json--batch_data_coverage.py**  
+```Note```: 重标数据经由标注平台重新标注返回批次数据以及无效数据，该程序是根据批次数据对训练数据进行覆盖操作
+
+
+- **update_json--invalid_data_coverage.py**  
+```Note```: 去除标注团队反馈的无效样本
+
+
+- **json_update_integration_v2-6.py**  
+```Note```: 重标数据一体化更新程序包括：1.根据txt文件去除自检的无效样本数据；2.根据标注团队反馈的批次数据对数据进行覆盖；3.去除标注团队反馈回来的无效样本
 
 
 ## 数据集介绍

@@ -4,7 +4,7 @@ import json
 from tqdm import tqdm
 import numpy as np
 
-from json_tools import make_json_head
+from library.json_tools import make_json_head
 
 
 def main():

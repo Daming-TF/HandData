@@ -1,7 +1,7 @@
 from copy import deepcopy
 from tqdm import tqdm
 
-from json_tools import load_json_data, write_json, get_ids
+from library.json_tools import load_json_data, write_json, get_ids
 
 json_path = fr'E:\left_hand_label_data\annotations\v2_6\remark_no_hand\wh_val2017.json'
 # save_path = fr'E:\left_hand_label_data\annotations\v2_6\no_hand_{mode}2017.json'

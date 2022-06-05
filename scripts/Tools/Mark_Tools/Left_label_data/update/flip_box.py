@@ -1,11 +1,12 @@
 import json
-
 import cv2
 from tqdm import tqdm
-from json_tools import make_json_head
+
+from library.json_tools import make_json_head
 
 json_dir = r'G:\imgdate2\HO3D_v3\HO3D_from_whole_body\annotations\person_keypoints_train2017-update.json'
 save_dir = r'G:\imgdate2\HO3D_v3\HO3D_from_whole_body\annotations\person_keypoints_train2017-flip_update.json'
+
 
 def main():
     json_head = make_json_head()

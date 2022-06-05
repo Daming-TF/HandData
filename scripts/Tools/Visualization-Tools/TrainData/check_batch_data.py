@@ -1,10 +1,12 @@
+"""
+功能：对比batch数据覆盖前后差别，用于检查标注团队标注质量的工具
+"""
 import cv2
-import json
 import os
-from collections import defaultdict
 import numpy as np
-from library.models.tools import draw_2d_points
-from library.models.json_tools import load_json_data
+
+from library.tools import draw_2d_points
+from library.json_tools import load_json_data
 
 
 def main():
