@@ -52,7 +52,7 @@ Data_Interface 的每一个子目录对应一个开源数据的处理接口
 
 
 ## 数据集介绍
-- [You Tube 3D Hands](#You Tube 3D Hands(YT 3D))
+- [You Tube 3D Hands](##YouTube3DHands)
 - [Halpe Full-Body Human Keypoints and HOI-Det dataset](#2.Halpe Full-Body Human Keypoints and HOI-Det dataset)
 - [handpose_x_gesture_v1](#3.handpose_x_gesture_v1(静态手势识别数据集))
 - [FreiHand Dataset](#4.FreiHand Dataset)
@@ -60,7 +60,7 @@ Data_Interface 的每一个子目录对应一个开源数据的处理接口
 
 
 
-### You Tube 3D Hands(YT3D)
+### YouTube3DHands
 `Homepage`: https://www.arielai.com/mesh_hands/  
 
 `Git`: https://github.com/arielai/youtube_3d_hands/  
