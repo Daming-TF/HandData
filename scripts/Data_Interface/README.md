@@ -1,6 +1,6 @@
 # 目录
 ## 文件结构与功能概要
-![image](https://github.com/Daming-TF/HandData/blob/master/material/%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D.jpg.jpg)  
+![image](https://github.com/Daming-TF/HandData/blob/master/material/%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D.jpg)  
 Data_Interface文件夹主要用于处理不同的开源数据集，转化为训练所需要的coco格式json文件；主要功能如下：  
 - [x] 生成训练数据集  
   - 全图模式
