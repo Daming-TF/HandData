@@ -1,12 +1,12 @@
 # Tools——工具库板块
 ## 目录
-- [Json Tools——json工具库](#Json_Tools——json工具库)
-- [Mark Tools——标记工具库](#Mark_Tools——标记工具库) 
-- [Visualization Tools——可视化工具库](#Visualization-Tools——可视化工具库) 
-- [Vedio Tools——视频工具库](#Others——其他工具) 
+- [Json Tools——json工具库](#Json_Tools)
+- [Mark Tools——标记工具库](#Mark_Tools) 
+- [Visualization Tools——可视化工具库](#Visualization-Tools) 
+- [Vedio Tools——视频工具库](#Others) 
 
 
-## Json_Tools——json工具库
+## Json_Tools
         json工具模块主要是用来处理原始数据或者训练数据的json文件；
 - **combine_json.py**  
 ```Note```: 用于把多个json文件的内容合并 
@@ -44,7 +44,7 @@
 ```Note```: 根据badcase.txt更新剪裁图片的json训练数据
 
 
-## Mark_Tools——标记工具库
+## Mark_Tools
 - **left_label_data**  
 ```Note```: left_hand_label_marktools.py的威力加强版，支持重标数据和无效数据标签的记录，并把结果保存到txt文档
 
@@ -61,7 +61,7 @@
 ```Note```: left_hand_label_marktools.py的威力加强版，支持重标数据和无效数据标签的记录，并把结果保存到txt文档
 
 
-## Visualization-Tools——可视化工具库
+## Visualization-Tools
 ### 模型参数和运算量对比可视化
 通过读取excel把每个训练模型的params，MFlops，F1，Model，Resolution，Alpha，Decoder信息读取并画到图标上 ，效果如下图：  
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/plot.jpg)  
@@ -77,7 +77,7 @@
 
 
 
-## Others——其他工具
+## Others
 - **vedio_writer.py**  
 ```Note```: 用于录屏的工具
 
