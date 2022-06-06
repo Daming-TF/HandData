@@ -39,6 +39,10 @@
 
 
 ## Mark_Tools——标记工具库
+- **left_label_data**  
+```Note```: left_hand_label_marktools.py的威力加强版，支持重标数据和无效数据标签的记录，并把结果保存到txt文档
+
+
 - **face_vis_marker.py**  
 ```Note```: 手动标记左右眼，鼻子，嘴巴四个关键点的可见性(0/1)
 
@@ -59,8 +63,18 @@
 
 ### 训练数据/标注数据可视化
 - **check_all_data(whole_body).py**  
-```Note```: 通用的训练数据可视化接口，但目前  
+```Note```: 通用的训练数据可视化接口
 
 
 - **check_batch_data.py**  
 ```Note```: 对比标注团队反馈的batch data覆盖前后数据差别，用于检查标注团队标注质量
+
+
+
+## Others——其他工具
+- **vedio_writer.py**  
+```Note```: 用于录屏的工具
+
+
+- **video_frame_extraction.py**  
+```Note```: 视频抽帧工具
