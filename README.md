@@ -14,3 +14,12 @@
   - Openpose
 
 ![image](https://github.com/Daming-TF/HandData/blob/master/material/%E5%B7%A5%E4%BD%9C%E6%A6%82%E8%A6%81.jpg)
+
+
+### 相关工作
+- [定性评估——手关键点检测热门API](https://github.com/Daming-TF/Assessment-Automation#assessment-automation)
+- [实时视频平台——毕设网页搭建](https://github.com/Daming-TF/SRS-WebRTC#mediapipe-handstracker%E7%9A%84tflite%E6%A8%A1%E5%9E%8Bpython%E6%8E%A8%E7%90%86%E6%8E%A5%E5%8F%A3)  
+- [手关键点体验demo](https://github.com/Daming-TF/Mediapipe-hands)
+- [手势分类网络训练——关键点输入](https://github.com/Daming-TF/landmark-based-hands-gesture-recognition)
+- [v3网络训练](https://github.com/Daming-TF/deep-hand-pose-net)
+- [ViT网络训练](https://github.com/Daming-TF/Vision-Transformer)
