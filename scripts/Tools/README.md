@@ -63,8 +63,8 @@
 
 ### 训练数据/标注数据可视化
 - **check_all_data(whole_body).py**  
-```Note```: 通用的训练数据可视化接口
-
+```Note```: 通用的训练数据可视化接口,效果如下图  
+- ![image](https://github.com/Daming-TF/HandData/blob/master/material/%E5%8F%AF%E8%A7%86%E5%8C%96.jpg) 
 
 - **check_batch_data.py**  
 ```Note```: 对比标注团队反馈的batch data覆盖前后数据差别，用于检查标注团队标注质量
