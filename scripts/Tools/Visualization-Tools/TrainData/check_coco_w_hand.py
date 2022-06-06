@@ -11,7 +11,7 @@ debug = 1
 
 def main():
     cv2.namedWindow("check", cv2.WINDOW_NORMAL)
-    json_path = r'E:\v2_6\output\annotations\train2017\2022-5-30-21-59-13-update.json'
+    json_path = r'E:\v2_6\output\annotations\train2017\2022-5-14-13-10-32.json'
     data_dir = r''  # G:\test_data\new_data\new_data_from_whole_body_v2_6\images
     images_dict, annotations_dict = load_json_data(json_path)
     ids = get_ids(images_dict)
